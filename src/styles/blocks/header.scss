@@ -1,6 +1,6 @@
 .header {
   &__top {
-    padding: 30px 0 100px 0; 
+    padding: 30px 0 100px 0;
     display: flex;
     justify-content: space-between;
   }
@@ -45,7 +45,7 @@
   &__logo-name {
     display: block;
     font-size: 29px;
-    font-family: 'Acrobat';
+    font-family: 'Akrobat';
     font-weight: 100;
     text-transform: uppercase;
   }
@@ -53,18 +53,33 @@
   &__logo-subtitle {
     margin-top: 16px;
     display: block;
+    color: #585757;
+    font-size: 11px;
   }
 
   &__phone {
-    font-family: 'Acrobat';
+    font-family: 'Akrobat';
     font-size: 31px;
     font-weight: 100;
+    @include transition;
+
+    &:hover {
+      opacity: .8;
+    }
   }
 
   &__adress {
     display: block;
     margin-top: 16px;
-    margin-right: 40px;
+    color: #585757;
+    font-size: 11px;
+    cursor: pointer;
+    text-decoration: underline;
+    @include transition;
+
+    &:hover {
+      opacity: .8;
+    }
   }
 
   &__middle {
@@ -74,6 +89,10 @@
   &__title {
     font-family: 'Glober';
     font-size: 36px;
+    font-weight: 900;
+    max-width: 530px;
+    width: 100%;
+    line-height: 56px;
   }
 
   &__subtitle {
@@ -83,4 +102,164 @@
     font-size: 25px;
     color: $primary-color;
   }
+
+  &__wrapper-btn {
+    margin-top: 40px;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__btn {
+    margin-right: 12px;
+    position: relative;
+  }
+
+  &__btn-img {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+
+  &__list {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    position: relative;
+    font-family: 'Glober';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    max-width: 220px;
+    width: 100%;
+    margin-left: 48px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -50px;
+      background-image: url(../assets/img/svg/check_icon.svg);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    &:not(:first-child) {
+      margin-top: 32px;
+    }
+  }
+}
+
+.format {
+  &__title {
+    text-align: center;
+    font-family: 'Glober';
+    font-weight: 300;
+    font-size: 36px;
+  }
+
+  &__subtitle {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__subtitle-left,
+  &__subtitle-right {
+    font-family: 'Glober';
+    font-weight: 900;
+    font-size: 30px;
+    color: $primary-color;
+  }
+
+  &__content {
+    position: relative;
+    border: 2px solid $primary-color;
+    margin-top: 32px;
+    background-color: #4d546c;
+    display: flex;
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 110%;
+      width: 2px;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $primary-color;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -27px;
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 10px solid $primary-color;
+
+    }
+  }
+
+  &__left,
+  &__right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 40px 40px 30px;
+  }
+
+  &__right-item,
+  &__left-item {
+    position: relative;
+    color: white;
+    font-family: 'Glober';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -17px;
+      top: 7px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: white;
+
+    }
+
+    &:not(:first-child) {
+      margin-top: 32px;
+    }
+  }
+
+  &__right-btn,
+  &__left-btn {
+    position: relative;
+    display: block;
+    width: 274px;
+    margin: 50px auto 0;
+  }
+}
+
+.title {
+  text-align: center;
+  font-family: 'Glober';
+  font-weight: 300;
+  font-size: 36px;
 }

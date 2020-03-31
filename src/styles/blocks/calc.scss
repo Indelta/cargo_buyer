@@ -1,0 +1,63 @@
+.calc {
+  padding: 44px 0 70px ;
+  background: url('../assets/img/jpg/bg_img.jpg') no-repeat;
+
+  &__inner {
+
+  }
+
+  &__form {
+    background-color: white; 
+    margin-top: 40px;
+    box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.5);
+
+  }
+
+  &__label {
+    text-align: start;
+  }
+
+  &__input {
+    height: 35px;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px 25px 35px;     
+
+  }
+
+  &__select {
+    margin-top: 10px;
+    width: 227px;
+    height: 35px;
+    border: 2px solid #afafaf;
+
+    &:focus {
+      outline: none;
+    }
+
+    option {
+      width: 100%;;
+    }
+  }
+
+  &__text {
+    width: 210px;
+    margin: 0 auto;
+    font-family: 'Glober';
+    font-weight: 400;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+  }
+
+  &__btn {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
+
+}

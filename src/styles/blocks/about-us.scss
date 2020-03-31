@@ -1,0 +1,129 @@
+.about-us {
+  padding: 190px 0 70px;
+
+  &__wrapper {
+    display: flex;
+    margin-top: 45px;
+    background: url('../assets/img/jpg/bg_img3.jpg') no-repeat;
+    background-size: contain;
+    padding: 78px;  
+  }
+
+  &__left {
+    display: block;
+    text-transform: uppercase;
+    width: 50%;
+    color: #891B17;
+    font-family: 'Glober';
+    font-weight: 700;
+    font-size: 52px;
+  }
+
+  &__right {
+    width: 50%;
+  }
+
+  &__desc {
+    font-family: 'Glober';
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #891B17;
+  }
+
+  &__list {
+    margin-top: 20px;
+  }
+
+  &__item {
+    position: relative;
+    margin-left: 15px;
+    font-family: 'Glober';
+    font-weight: 600;
+    font-size: 16px;
+    color: #891B17;
+
+    &:not(:first-child) {
+      margin-top: 12px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: #891B17;
+    }
+  }
+
+  &__text {
+    display: block;
+    max-width: 745px;
+    width: 100%;
+    margin: 35px auto 45px;
+    font-family: 'Glober';
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #891B17;
+  }
+
+  &__warning {
+    padding: 25px 60px;
+    border: 2px solid #ff004e;
+    display: flex;
+    align-items: center;
+  }
+
+  &__img {
+    margin-right: 68px;
+  }
+
+  &__slogan {
+    font-family: 'Glober';
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 700;
+
+    span {
+      color: #ff0753;
+    }
+  }
+
+  &__items {
+    max-width: 787px;
+    width: 100%;
+    margin: 50px auto 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__cell { 
+           
+    &:not(:first-child) {
+      
+    }
+  }
+
+  &__top {
+    display: block;
+    font-family: 'Akrobat';
+    font-weight: 100;
+    font-size: 70px;
+    color: #FF1059;
+  }
+
+  &__bottom {
+    margin-top: 25px;
+    display: block;
+    font-family: 'Akrobat';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    max-width: 190px;
+  }
+}

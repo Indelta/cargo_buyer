@@ -1,0 +1,23 @@
+.products {
+  &__inner {
+    padding: 100px 0 90px;
+  }
+
+  &__list {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__desc {    
+    display: block;
+    text-align: center;
+    margin-top: 8px;
+    max-width: 91px;
+    width: 100px;    
+    font-family: 'Glober';
+    font-size: 16px;
+    line-height: 24px;
+    color: #FF004E;
+  }
+}

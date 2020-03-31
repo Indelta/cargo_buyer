@@ -1,0 +1,28 @@
+.example {
+  padding: 42px 0 28px;
+
+  &__list {
+    max-width: 783px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 19px;
+  }
+
+  &__item {
+    width: 221px;
+    margin-top: 25px;
+  }
+
+  &__desc {
+    display: block;
+    font-family: 'Glober';
+    font-weight: 300;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 11px;
+    line-height: 24px;
+  }
+}

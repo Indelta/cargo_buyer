@@ -1,0 +1,13 @@
+.footer {  
+  &__inner {
+    padding: 35px 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header {
+    &__phone {
+      font-size: 61px;
+    }
+  }
+}
