@@ -2,31 +2,16 @@ import * as $ from 'jquery';
 import './styles/main.scss';
 import Swiper from 'swiper';
 import AOS from 'aos';
+import { calcSender } from './js/formsSender';
 
 document.addEventListener('DOMContentLoaded', function() {
-    var mySwiper = new Swiper('.swiper-container', { 
-        spaceBetween: 30,
-        centeredSlides: true,
-        loop: true,
-        slidesPerView: 1,
-        breakpoints: {
-            1300: {
-              slidesPerView: 2,
-            }
-          },
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
-        navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
-    });
+    $('#open-pdf').on('click', () => true);
+    const params = new URLSearchParams(window.location.search);
+    $('input[name="utm_term"]').val(params.get('utm_term'));
+    $('input[name="utm_source"]').val(params.get('utm_source'));
+    $('input[name="utm_medium"]').val(params.get('utm_medium'));
+    $('input[name="utm_campaign"]').val(params.get('utm_campaign'));
+    $('input[name="utm_content"]').val(params.get('utm_content'));
     AOS.init({
       // Global settings:
       disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -48,6 +33,11 @@ document.addEventListener('DOMContentLoaded', function() {
       mirror: false, // whether elements should animate out while scrolling past them
       anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
     
+    });
+
+    $('.calc__form').on('submit', function(e) {
+      e.preventDefault();
+      calcSender($(this));
     });
  }, false);
 

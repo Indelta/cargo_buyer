@@ -83,7 +83,13 @@ module.exports = {
     optimization: optimization(),
     devServer: {
         port: 8081,
-        hot: isDev
+        hot: isDev,
+        contentBase: path.join(__dirname, 'src'),
+        proxy: {
+            '/send.php': {
+                target: 'http://localhost:8081/dist/send.php'
+            }
+        }
     },
     plugins: [
         new HTMLWebpackPlugin({
@@ -92,16 +98,24 @@ module.exports = {
                collapseWhitespace: isProd 
             }
         }),
-        new CleanWebpackPlugin(),
         new CopyWebpackPlugin([
             {
                 from: path.resolve(__dirname, 'src/assets/img'),
                 to: path.resolve(__dirname, 'dist/assets/img')
-            }
+            },
+            {
+                from: path.resolve(__dirname, 'src/leads.php'),
+                to: path.resolve(__dirname, 'dist/')
+            },
+            {
+                from: path.resolve(__dirname, 'src/send.php'),
+                to: path.resolve(__dirname, 'dist/')
+            },
         ]),
         new MiniCssExtractPlugin({
             filename: filename('css')
-        })
+        }),
+        new CleanWebpackPlugin()
     ],
     module: {
         rules: [

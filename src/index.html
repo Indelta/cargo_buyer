@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <a href="#" target="_blank" id="open-pdf" style="display:none"></a>
     <header class="header">
         <div class="container">
             <div class="header__inner">
@@ -155,59 +156,81 @@
             <div class="container">
                 <div class="cacl__inner">
                     <h2 class="calc__title title">Рассчитайте точную стоимость доставки груза</h2>
-                    <form class="calc__form">
+                    <form class="calc__form" method="POST" action="./send.php">
                         <div class="calc__row">
                             <div class="calc__col">
                                 <label class="calc__label form__label">1.Выберите категорию груза:</label>
-                                <select class="calc__select" id="js-cargo" name="cargo">
-                                    <option value="volvo">Volvo</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="fiat">Fiat</option>
-                                    <option value="audi">Audi</option>
+                                <select class="calc__select" id="js-cargo" name="products" >
+                                    <option value="Одежда" selected="selected">Одежда</option>
+                                    <option value="Обувь">Обувь</option>
+                                    <option value="Сумки">Сумки</option>
+                                    <option value="Ремни">Ремни</option>
+                                    <option value="Чемоданы">Чемоданы</option>
+                                    <option value="Дорожные	сумки">Дорожные сумки</option>
+                                    <option value="БАДы">БАДы</option>
+                                    <option value="Рыболовные	снасти">Рыболовные снасти</option>
+                                    <option value="Запчасти">Запчасти</option>
+                                    <option value="Косметика">Косметика</option>
+                                    <option value="
+                                    Домашний текстиль">
+                                        Домашний текстиль</option>
                                 </select>
                             </div>
                             <div class="calc__col">
                                 <label class="calc__label form__label">Введите вес, кг:
                                 </label>
-                                <input type="text" class="calc__input form__input">
+                                <input type="number" placeholder='25' class="calc__input form__input" name="weight">
                             </div>
                             <div class="calc__col">
                                 <label class="calc__label form__label">3.Выберите страну отправки груза:</label>
-                                <select class="calc__select" id="js-cargo" name="cargo">
-                                    <option value="volvo">Volvo</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="fiat">Fiat</option>
-                                    <option value="audi">Audi</option>
+                                <select class="calc__select" id="js-cargo" name="countries">
+                                    <option value="Бельгия" selected="selected">Бельгия</option>
+                                    <option value="Великобритания">Великобритания</option>
+                                    <option value="Германия">Германия</option>
+                                    <option value="Греция">Греция</option>
+                                    <option value="Испания">Испания</option>
+                                    <option value="Италия">Италия</option>
+                                    <option value="Китай">Китай</option>
+                                    <option value="Польша">Польша</option>
+                                    <option value="США">США</option>
+                                    <option value="Франция">Франция</option>
+                                    <option value="Прочие страны мира">Прочие страны мира</option>
                                 </select>
                             </div>
 
                         </div>
                         <div class="calc__row">
                             <div class="calc__col">
-                                <label class="calc__label form__label"> 4. Введите ваше имя:
+                                <label class="calc__label form__label" > 4. Введите ваше имя:
                                 </label>
 
-                                <input type="text" class="calc__input form__input">
+                                <input type="text" class="calc__input form__input" name='name'>
                             </div>
                             <div class="calc__col">
                                 <label class="calc__label form__label">5. Введите ваш номер телефона: </label>
 
-                                <input type="text" class="calc__input form__input">
+                                <input type="text" class="calc__input form__input" name='phone'>
                             </div>
                             <div class="calc__col">
-                                <label class="calc__label form__label"> 6. Ваш аккаунт nstagram:
+                                <label class="calc__label form__label"> 6. Ваш аккаунт Instagram:
                                 </label>
 
-                                <input type="text" class="calc__input form__input">
+                                <input type="text" class="calc__input form__input" name='instagram'>
                             </div>
                         </div>
-                        <button class="calc__btn btn">расчитать стоимость
+                        <button class="calc__btn btn" type="submit">расчитать стоимость
                             <img src="./assets/img/png/Layer 131 copy 2@1X.png" alt="img" class="header__btn-img">
                         </button>
                         <p class="calc__text">
                             После нажатия на кнопку вы будете
-перенаправлены на страницу расчета
+                            перенаправлены на страницу расчета
                         </p>
+                        <input type="hidden" name="type" value="Калькулятор" />
+                        <input type="hidden" name="utm_term" value="" />
+                        <input type="hidden" name="utm_source" value="" />
+                        <input type="hidden" name="utm_medium" value="" />
+                        <input type="hidden" name="utm_campaign" value="" />
+                        <input type="hidden" name="utm_content" value="" />
                     </form>
                 </div>
             </div>

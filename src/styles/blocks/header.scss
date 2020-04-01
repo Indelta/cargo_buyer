@@ -1,6 +1,24 @@
 .header {
+  background: url('../assets/img/jpg/hero_img.png') no-repeat 65% 10%,
+              url('../assets/img/jpg/left_img.jpg') no-repeat 0px 0px,
+              url('../assets/img/jpg/left_photo.png') no-repeat 0% 54%,
+              url('../assets/img/jpg/right_img.jpg') no-repeat 100% 0%,
+              url('../assets/img/jpg/right_photo.png') no-repeat 100% 51.5%;
+
+  @media (max-width: 1720px) {
+    background: url('../assets/img/jpg/hero_img.png') no-repeat 65% 10%,
+    url('../assets/img/jpg/left_img.jpg') no-repeat 0px 0px,
+    url('../assets/img/jpg/left_photo.png') no-repeat 0% 54%,
+    url('../assets/img/jpg/right_img.jpg') no-repeat 130% 0%,
+    url('../assets/img/jpg/right_photo.png') no-repeat 100% 51.5%;            
+  }
+
+  @include mobile {
+    background: url('../assets/img/jpg/hero_img.png') no-repeat contain;
+  }
+  
   &__top {
-    padding: 30px 0 100px 0;
+    padding-top: 30px;
     display: flex;
     justify-content: space-between;
   }
@@ -51,6 +69,8 @@
   }
 
   &__logo-subtitle {
+    font-family: 'Glober';
+    font-weight: 300;
     margin-top: 16px;
     display: block;
     color: #585757;
@@ -69,6 +89,8 @@
   }
 
   &__adress {
+    font-family: 'Glober';
+    font-weight: 300;
     display: block;
     margin-top: 16px;
     color: #585757;
