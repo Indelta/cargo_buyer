@@ -25,7 +25,7 @@ const optimization = () => {
     return config
 }
 
-const filename = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
+const filename = ext => isDev ? `[name].${ext}` : `[name].${ext}`
 
 const cssLoaders = extra => {
     const loaders = [
@@ -87,7 +87,7 @@ module.exports = {
         contentBase: path.join(__dirname, 'src'),
         proxy: {
             '/send.php': {
-                target: 'http://localhost:8081/dist/send.php'
+                target: 'http://localhost/cargo_buyer/dist/send.php'
             }
         }
     },
@@ -115,7 +115,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: filename('css')
         }),
-        new CleanWebpackPlugin()
+        // new CleanWebpackPlugin()
     ],
     module: {
         rules: [
