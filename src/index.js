@@ -3,8 +3,10 @@ import './styles/main.scss';
 import Swiper from 'swiper';
 import AOS from 'aos';
 import { calcSender } from './js/formsSender';
+import mobileMenu from './js/mobile-menu';
 
 document.addEventListener('DOMContentLoaded', function() {
+  mobileMenu();
     $('#open-pdf').on('click', () => true);
     const params = new URLSearchParams(window.location.search);
     $('input[name="utm_term"]').val(params.get('utm_term'));
@@ -38,6 +40,18 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.calc__form').on('submit', function(e) {
       e.preventDefault();
       calcSender($(this));
+    });
+
+    const mySwiper = new Swiper(".swiper-container", {
+      slidesPerView: "auto",
+      centeredSlides: true,
+      spaceBetween: 15,
+      breakpoints: {
+        1600: {
+          slidesPerView: 1.4,
+          spaceBetween: 20
+        }
+      },
     });
  }, false);
 

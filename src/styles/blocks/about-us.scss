@@ -1,12 +1,24 @@
 .about-us {
   padding: 190px 0 70px;
 
+  @include mobile {
+    padding: 100px 0 34px;
+  }
+
   &__wrapper {
     display: flex;
     margin-top: 45px;
     background: url('../assets/img/jpg/bg_img3.jpg') no-repeat;
     background-size: contain;
-    padding: 78px;  
+    padding: 21px 26px 34px;   
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 17px;
+      background-size: cover;
+      background-position: center center;
+    }
   }
 
   &__left {
@@ -17,10 +29,22 @@
     font-family: 'Glober';
     font-weight: 700;
     font-size: 52px;
+
+    @include mobile {
+      font-size: 32px;
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &__right {
     width: 50%;
+
+    @include mobile {
+      margin-top: 40px;
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &__desc {
@@ -29,10 +53,16 @@
     font-size: 16px;
     line-height: 24px;
     color: #891B17;
+
+    @include mobile {
+      color: #82252B;
+    }
   }
 
   &__list {
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
   }
 
   &__item {
@@ -42,6 +72,10 @@
     font-weight: 600;
     font-size: 16px;
     color: #891B17;
+
+    @include mobile {
+      display: inline-block;
+    }
 
     &:not(:first-child) {
       margin-top: 12px;
@@ -70,6 +104,9 @@
     font-size: 16px;
     line-height: 24px;
     color: #891B17;
+    @include mobile {
+      color: black;
+    }
   }
 
   &__warning {
@@ -77,10 +114,21 @@
     border: 2px solid #ff004e;
     display: flex;
     align-items: center;
+
+    @include mobile {
+      padding: 30px 23px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__img {
     margin-right: 68px;
+
+    @include mobile {
+      margin-right: 0;
+    }
   }
 
   &__slogan {
@@ -88,6 +136,11 @@
     font-size: 16px;
     line-height: 21px;
     font-weight: 700;
+
+    @include mobile {
+      margin-top: 41px;
+      text-align: center;
+    }
 
     span {
       color: #ff0753;
@@ -100,13 +153,19 @@
     margin: 50px auto 0;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include mobile {
+      justify-content: space-around;
+      margin: 0;
+    }
   }
 
   &__cell { 
-           
-    &:not(:first-child) {
-      
-    }
+     @include mobile {
+       margin-top: 25px;
+     }      
+
   }
 
   &__top {
@@ -115,6 +174,10 @@
     font-weight: 100;
     font-size: 70px;
     color: #FF1059;
+
+    @include mobile {
+      font-size: 50px;
+    }
   }
 
   &__bottom {
@@ -125,5 +188,12 @@
     font-size: 16px;
     line-height: 21px;
     max-width: 190px;
+
+    @include  mobile {
+      max-width: 140px;
+      font-size: 14px;
+      line-height: 18px;
+      margin-top: 11px;
+    }
   }
 }

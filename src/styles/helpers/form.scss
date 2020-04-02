@@ -28,6 +28,10 @@
     color: #555555;
     transition: transform 0.2s ease;
     cursor: text;
+
+    @include mobile {
+      margin-top: 16px;
+    }
   }
 
   &__input {
@@ -47,7 +51,7 @@
     }
 
     @include mobile {
-      width: 100%;
+      width: 244px;
     }
   } 
 

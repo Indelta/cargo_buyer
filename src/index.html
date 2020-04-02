@@ -12,9 +12,37 @@
     <header class="header">
         <div class="container">
             <div class="header__inner">
+                <div class="header__navigation">
+                    <div class="container">
+                        <ul class="header__items">
+                            <li class="header__cell">
+                                <a href="" class="header__link">Наши пакеты</a>
+                            </li>
+                            <li class="header__cell">
+                                <a href="" class="header__link">Калькулятор стоимости</a>
+                            </li>
+                            <li class="header__cell">
+                                <a href="" class="header__link">Как мы работаем</a>
+                            </li>
+                            <li class="header__cell">
+                                <a href="" class="header__link">Прайс лист</a>
+                            </li>
+                            <li class="header__cell">
+                                <a href="" class="header__link">О нас</a>
+                            </li>
+                            <li class="header__cell">
+                                <a href="" class="header__link">Контакты</a>
+                            </li>
+                        </ul>
+                        <div class="header__close">&#10006;</div>
+                    </div>
+                </div>
+
                 <div class="header__top">
                     <div class="header__left">
-                        <div class="header__menu"></div>
+                        <div class="header__wrapper-menu">
+                            <div class="header__menu"></div>
+                        </div>
                         <div class="header__logo">
                             <span class="header__logo-name">сargo-buyer.ru</span>
                             <span class="header__logo-subtitle">Логистика для байеров</span>
@@ -26,8 +54,7 @@
                     </div>
                 </div>
                 <div class="header__middle">
-                    <h1 class="header__title">Доставляем товары
-                        из Европы и США для байеров</h1>
+                    <h1 class="header__title">Доставляем товары<span> из&nbsp;Европы и США для байеров</span></h1>
                     <span class="header__subtitle">Сами отправляем по адресам ваших клиентов</span>
                     <div class="header__wrapper-btn">
                         <button class="btn header__btn">рассчитать стоимость
@@ -157,10 +184,10 @@
                 <div class="cacl__inner">
                     <h2 class="calc__title title">Рассчитайте точную стоимость доставки груза</h2>
                     <form class="calc__form" method="POST" action="./send.php">
-                        <div class="calc__row">
+                        <div class="calc__row calc__row-top">
                             <div class="calc__col">
                                 <label class="calc__label form__label">1.Выберите категорию груза:</label>
-                                <select class="calc__select" id="js-cargo" name="products" >
+                                <select class="calc__select" id="js-cargo" name="products">
                                     <option value="Одежда" selected="selected">Одежда</option>
                                     <option value="Обувь">Обувь</option>
                                     <option value="Сумки">Сумки</option>
@@ -199,9 +226,9 @@
                             </div>
 
                         </div>
-                        <div class="calc__row">
+                        <div class="calc__row calc__row-bottom">
                             <div class="calc__col">
-                                <label class="calc__label form__label" > 4. Введите ваше имя:
+                                <label class="calc__label form__label"> 4. Введите ваше имя:
                                 </label>
 
                                 <input type="text" class="calc__input form__input" name='name'>
@@ -287,6 +314,58 @@
                 </div>
             </div>
         </section>
+        <section class="example mobile">
+            <div class="example__inner">
+                <h2 class="example__title title">Рассказываем на примере с Италией,
+                    как работает наш пакет «Под ключ»</h2>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <li class="example__item swiper-slide">
+                            <img src="./assets/img/jpg/Alice_1.jpg" alt="" class="example__img">
+                            <span class="example__desc">Байер Алиса находит клиентов через Instagram и предлагает им
+                                выгодные цены на модную одежду, обувь и аксессуары.
+                                Алиса закупает все товары в Италии с выгодой 25-40%, поэтому у нее много заказов</span>
+                        </li>
+                        <li class="example__item swiper-slide">
+                            <img src="./assets/img/jpg/Alice_2.jpg" alt="" class="example__img">
+                            <span class="example__desc">У Алисы на этой неделе заказали 3 пары обуви, 2 сумки и пальто.
+                                Алиса понимает, что клиенты не хотят долго ждать, поэтому обращается
+                                в Cargo-byer.ru</span>
+                        </li>
+                        <li class="example__item swiper-slide">
+                            <img src="./assets/img/jpg/Alice_3.jpg" alt="" class="example__img">
+                            <span class="example__desc">В Cargo-byer Алисе предлагают вариант, который значительно
+                                сэкономит ее время и деньги: компания сама заберет ее скомплектованный заказ в Италии,
+                                доставит его в Москву и сама отправит всем клиентам Алисы. А еще компания гарантирует
+                                срок доставки и Алиса может точно сказать свои клиентам, когда они получат свой
+                                заказ</span>
+                        </li>
+                        <li class="example__item swiper-slide">
+                            <img src="./assets/img/jpg/Alice_4.jpg" alt="" class="example__img">
+                            <span class="example__desc">Что нужно сделать Алисе? Ей нужно скомплектовать 1 коробку с
+                                двумя коробками внутри (для каждого клиента). Когда весь заказ Алисы попадает на склад в
+                                Вильнюс, логист просит заполнить распределительную накладную в которой Алиса указывает:
+                                - Коробка 1: для ФИО, клиент сам заберет ее на складе в Москве
+                                - Коробка 2: для ФИО, заказ нужно отправить в Смоленск</span>
+                        </li>
+                        <li class="example__item swiper-slide">
+                            <img src="./assets/img/jpg/Alice_5.jpg" alt="" class="example__img">
+                            <span class="example__desc">К моменту прибытия заказа Алисы на склад в Москву, сотрудники
+                                уже знают, как распределить каждую коробку и поэтому делают все быстро и без задержек.
+                                Как и просила Алиса, одному клиенту отдают заказ на складе, другому отправляют
+                                транспортной компанией в Смоленск.</span>
+                        </li>
+                        <li class="example__item swiper-slide">
+                            <img src="./assets/img/jpg/Alice_6.jpg" alt="" class="example__img">
+                            <span class="example__desc">Алиса счастлива – ей не пришлось тратить свое время, чтобы самой
+                                забрать заказ со склада и отправлять клиентам. Это время Алиса потратила на поиск новых
+                                заказчиков и оформила еще 3 заказа
+                                в Cargo-byer :)</span>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="price">
             <div class="container">
                 <div class="price__inner">
@@ -314,16 +393,18 @@
                             </p>
                         </li>
                     </ul>
-                    <form class="price__form form">
-                        <h3 class="form__title">Прайс-лист на доставку грузов</h3>
-                        <label for="" class="form__label"> Введите ваш номер телефона:
-                            <input type="text" class="form__input">
-                        </label>
-                        <button class="btn form__btn">
-                            перейти в прайс
-                            <img src="./assets/img/png/Layer 131 copy 2@1X.png" alt="img" class="header__btn-img">
-                        </button>
-                    </form>
+                    <div class="container">
+                        <form class="price__form form">
+                            <h3 class="form__title">Прайс-лист на доставку грузов</h3>
+                            <label for="" class="form__label"> Введите ваш номер телефона:
+                                <input type="text" class="form__input">
+                            </label>
+                            <button class="btn form__btn">
+                                перейти в прайс
+                                <img src="./assets/img/png/Layer 131 copy 2@1X.png" alt="img" class="header__btn-img">
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -410,7 +491,9 @@
         <div class="container">
             <div class="footer__inner">
                 <div class="header__left">
-                    <div class="header__menu"></div>
+                    <div class="header__wrapper-menu">
+                        <div class="header__menu"></div>
+                    </div>
                     <div class="header__logo">
                         <span class="header__logo-name">сargo-buyer.ru</span>
                         <span class="header__logo-subtitle">Логистика для байеров</span>

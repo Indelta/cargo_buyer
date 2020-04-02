@@ -1,4 +1,5 @@
 .header {
+  position: relative;
   background: url('../assets/img/jpg/hero_img.png') no-repeat 65% 10%,
               url('../assets/img/jpg/left_img.jpg') no-repeat 0px 0px,
               url('../assets/img/jpg/left_photo.png') no-repeat 0% 54%,
@@ -28,18 +29,29 @@
 
   }
 
-  &__menu {
-    margin-top: 12px;
-    position: relative;
-    width: 27px;
-    height: 2px;
-    background-color: black;
+  &__wrapper-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
     margin-right: 36px;
+    width: 27px;
+    height: 27px;
     cursor: pointer;
 
     &:hover {
       opacity: .8;
     }
+
+    @include mobile {
+      margin-right: 10px;
+    }
+  }
+
+  &__menu {    
+    position: relative;
+    width: 27px;
+    height: 2px;
+    background-color: black;
 
     &:before {
       content: '';
@@ -66,6 +78,10 @@
     font-family: 'Akrobat';
     font-weight: 100;
     text-transform: uppercase;
+
+    @include mobile {
+      font-size: 19px;
+    }
   }
 
   &__logo-subtitle {
@@ -75,6 +91,11 @@
     display: block;
     color: #585757;
     font-size: 11px;
+
+    @include mobile {
+      font-size: 11px;
+      margin-top: 6px;
+    }
   }
 
   &__phone {
@@ -85,6 +106,10 @@
 
     &:hover {
       opacity: .8;
+    }
+
+    @include mobile {
+      font-size: 20px;
     }
   }
 
@@ -102,10 +127,21 @@
     &:hover {
       opacity: .8;
     }
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__middle {
     padding: 80px 42px 325px;
+
+    @include mobile {
+      padding: 19px 14px 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__title {
@@ -115,6 +151,16 @@
     max-width: 530px;
     width: 100%;
     line-height: 56px;
+
+    @include mobile {
+      font-size: 29px;
+      text-align: center;
+      line-height: 26px;
+
+      span {
+        font-size: 19px;
+      }
+    }
   }
 
   &__subtitle {
@@ -123,10 +169,26 @@
     font-weight: 700;
     font-size: 25px;
     color: $primary-color;
+
+    @include mobile {
+      margin-top: 10px;
+      padding: 8px 0;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      font-size: 13px;
+      text-align: center;
+    }
   }
 
   &__wrapper-btn {
     margin-top: 40px;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 267px;
+    }
   }
 
   &__right {
@@ -138,6 +200,11 @@
   &__btn {
     margin-right: 12px;
     position: relative;
+
+    @include mobile {
+      margin-right: 0;
+      margin-bottom: 7px;
+    }
   }
 
   &__btn-img {
@@ -150,6 +217,10 @@
     margin-top: 50px;
     display: flex;
     flex-direction: column;
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__item {
@@ -176,6 +247,65 @@
 
     &:not(:first-child) {
       margin-top: 32px;
+    }
+  }
+
+  &__navigation {
+    padding: 50px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1;
+    padding-left: 100px;
+    transform: translateY(-100%);
+    @include transition;
+
+    @include mobile {
+      padding-left: 20px;
+    }
+
+    &.active {
+      transform: translateY(0);
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style-type: disc;
+  }
+
+  &__cell {
+    font-family: 'Glober';
+    font-size: 14px;
+    line-height: 25px;
+
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    right: 20%;
+    top: 30px;
+    font-size: 30px;
+    cursor: pointer;
+    @include transition;
+
+    &:hover {
+      opacity: .8;
+    }
+
+    @include mobile {
+      right: 5%;
     }
   }
 }
@@ -218,6 +348,10 @@
       left: 50%;
       transform: translateX(-50%);
       background-color: $primary-color;
+
+      @include mobile {
+        display: none;
+      }
     }
 
     &:after {
@@ -232,6 +366,10 @@
       border-right: 5px solid transparent;
       border-top: 10px solid $primary-color;
 
+      @include mobile {
+        display: none;
+      }
+
     }
   }
 
@@ -242,6 +380,12 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 40px 40px 40px 30px;
+  }
+
+  &__right {
+    @include mobile {
+      display: none;
+    }
   }
 
   &__right-item,
@@ -284,4 +428,8 @@
   font-family: 'Glober';
   font-weight: 300;
   font-size: 36px;
+
+  @include mobile {
+    font-size: 26px;
+  }
 }

@@ -1,6 +1,10 @@
 .products {
   &__inner {
     padding: 100px 0 90px;
+
+    @include mobile {
+      padding: 29px 45px;
+    }
   }
 
   &__list {
@@ -8,6 +12,23 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+  }
+
+  &__item {    
+    @include mobile {
+      margin-top: 26px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 33%;
+
+      img {
+        width: 54px;
+        height: 54px;
+        margin: 0 auto;
+      }
+    }
   }
 
   &__desc {    
@@ -20,5 +41,9 @@
     font-size: 16px;
     line-height: 24px;
     color: #FF004E;
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
 }

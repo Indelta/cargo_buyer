@@ -3,6 +3,10 @@
   padding: 45px 0 230px;
   background-image: url('../assets/img/jpg/bg_img2.jpg');
 
+  @include mobile {
+    padding: 31px 0 130px;
+  }
+
   &__title {
     color: white;
   }
@@ -14,10 +18,20 @@
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   &__item {
     width: 33%;
+
+    @include mobile {
+      display: flex;
+      width: 100%;
+
+      &:not(:first-child) {
+        margin-top: 22px;
+      }
+    }
   }
 
   &__img {
@@ -34,6 +48,13 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
+
+    @include mobile {
+      font-size: 14px;
+      text-align: left;
+      margin-left: 20px;
+      line-height: 20px;
+    }
   }
 
   &__form {
@@ -44,9 +65,13 @@
     max-width: 396px;
     width: 100%;
     margin: 45px auto 0;
-    padding: 30px 50px 50px;
+    padding: 20px 20px 24px;
     background-color: white;
     box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75);
+
+    @include mobile {
+      bottom: -100px;
+    }
   }
 }
 
@@ -56,6 +81,10 @@
     font-size: 20px;
     font-weight: 900;
     text-align: center;
+
+    @include mobile {
+      font-size: 18px;
+    }
   }
 
   &__btn {
