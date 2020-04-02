@@ -15,7 +15,7 @@
   }
 
   @include mobile {
-    background: url('../assets/img/jpg/hero_img.png') no-repeat contain;
+    background: url('../assets/img/jpg/hero_img.png') no-repeat 50% 0%;
   }
   
   &__top {
@@ -330,8 +330,17 @@
     font-weight: 900;
     font-size: 30px;
     color: $primary-color;
-  }
 
+    @include mobile {
+      color: #8F8F8F;
+      cursor: pointer;
+
+      &.active {
+        color: #FF014D;
+      }
+    }
+  }
+ 
   &__content {
     position: relative;
     border: 2px solid $primary-color;
@@ -380,13 +389,18 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 40px 40px 40px 30px;
-  }
 
-  &__right {
     @include mobile {
+      width: 100%;
       display: none;
+
+      &.active {
+        display: flex;
+      }
     }
   }
+
+
 
   &__right-item,
   &__left-item {
@@ -420,6 +434,10 @@
     display: block;
     width: 274px;
     margin: 50px auto 0;
+
+    @include mobile {
+      width: 234px;
+    }
   }
 }
 

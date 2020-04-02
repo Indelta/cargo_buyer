@@ -31,7 +31,7 @@
     left: 50%;
     transform: translateX(-50%);
     background: #1E1E1E;
-    top: 22px;
+    top: -15px;
     color: white;
     padding: 0 20px 0;
     font-family: 'Glober';
@@ -40,6 +40,7 @@
 
 
     @include mobile {
+      top: 22px;
       font-size: 26px;
       width: 100%;
     }

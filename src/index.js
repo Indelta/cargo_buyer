@@ -4,9 +4,11 @@ import Swiper from 'swiper';
 import AOS from 'aos';
 import { calcSender } from './js/formsSender';
 import mobileMenu from './js/mobile-menu';
+import tabManager from './js/tab-manager';
 
 document.addEventListener('DOMContentLoaded', function() {
   mobileMenu();
+  tabManager();
     $('#open-pdf').on('click', () => true);
     const params = new URLSearchParams(window.location.search);
     $('input[name="utm_term"]').val(params.get('utm_term'));
