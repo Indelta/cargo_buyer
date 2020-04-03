@@ -22,7 +22,7 @@
     font-weight: 600;
     margin-top: 33px;
     transform-origin: 0 50%;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1;
     letter-spacing: -0.03em;
     color: #555555;
@@ -37,12 +37,14 @@
   &__input {
     width: 244px;
     height: 51px;
+    font-family: 'Glober';
+    font-size: 14px;
     padding: 0 10px;
     margin-top: 10px;
     font-size: 20px;
     line-height: 1;
     letter-spacing: -0.03em;
-    color: #555555;
+    color: black;
     background: white;
     border: 2px solid #afafaf;
 

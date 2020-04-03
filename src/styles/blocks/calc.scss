@@ -1,15 +1,11 @@
 .calc {
-  padding: 44px 0 70px ;
+  padding: 44px 0 70px;
   background: url('../assets/img/jpg/bg_img.jpg') no-repeat;
 
-  &__inner {
-
-  }
-
   &__form {
-    background-color: white; 
+    background-color: white;
     margin-top: 40px;
-    box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 2px 14px 0px rgba(0, 0, 0, 0.5);
 
   }
 
@@ -19,14 +15,45 @@
 
   &__input {
     height: 35px;
+    width: 227px;
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   &__row {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 20px 50px 25px 35px;     
 
+    @include tablet-and-mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+
+  }
+
+  &__top {
+    padding: 20px 50px 25px 35px;
+    box-shadow: 0px 11px 17px -13px rgba(0,0,0,0.75);
+
+    @include tablet-and-mobile {
+      padding: 25px;
+      box-shadow: none;
+    }
+  }
+
+  &__bottom {
+    padding: 20px 50px 25px 35px;
+
+    @include tablet-and-mobile {
+      padding: 25px;
+    }
+
+    @include mobile {
+      display: none;
+    }
   }
 
   &__col {
@@ -54,7 +81,8 @@
     }
 
     option {
-      width: 100%;;
+      width: 100%;
+      ;
     }
   }
 
@@ -72,14 +100,20 @@
   &__btn {
     display: block;
     position: relative;
-    margin: 0 auto;
-    margin-bottom: 25px;
+    margin: 35px auto 25px;
   }
 
+  &__next {
+    display: none;
+
+    @include mobile {
+      display: block;
+    }
+  }
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

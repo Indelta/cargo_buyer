@@ -2,9 +2,8 @@
   padding: 42px 0 28px;
 
   @include mobile {
-    padding: 20px 41px;
-    display: none;
-    padding-right: 0;
+    padding: 20px;
+    display: none;    
   }
 
   &__list {
@@ -49,5 +48,9 @@
   @include mobile {
     display: block;
   }
+}
+
+.swiper-container {
+  margin-right: -20px;
 }
 

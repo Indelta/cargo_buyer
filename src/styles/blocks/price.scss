@@ -5,6 +5,7 @@
 
   @include mobile {
     padding: 31px 0 130px;
+    background-position: center;
   }
 
   &__title {
@@ -71,6 +72,7 @@
 
     @include mobile {
       bottom: -100px;
+      width: 90%;
     }
   }
 }

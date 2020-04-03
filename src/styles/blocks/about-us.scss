@@ -2,22 +2,33 @@
   padding: 190px 0 70px;
 
   @include mobile {
-    padding: 100px 0 34px;
+    padding: 125px 0 34px;
   }
 
-  &__wrapper {
-    display: flex;
+  &__wrapper {    
     margin-top: 45px;
     background: url('../assets/img/jpg/bg_img3.jpg') no-repeat;
-    background-size: contain;
-    padding: 21px 26px 34px;   
+    background-size: cover;
+    padding: 40px;
+      
+
+    @include mobile {
+      background-size: cover;
+      background-position: center center;
+      padding: 0;
+    }
+  }
+
+  &__border {
+    display: flex;
+    padding: 21px 26px 34px; 
+    background-color: rgba(255, 255, 255, .6);
 
     @include mobile {
       flex-direction: column;
       align-items: center;
       margin-top: 17px;
-      background-size: cover;
-      background-position: center center;
+      background-color: transparent;
     }
   }
 

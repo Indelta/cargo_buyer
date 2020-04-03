@@ -1,7 +1,7 @@
 button {
     padding: 0;
     border: none;
-    font: inherit;
+    // font: inherit;
     color: inherit;
     background-color: transparent;
   /* отображаем курсор в виде руки при наведении; некоторые
@@ -19,13 +19,14 @@ button {
     background: $primary-color;
     transition: all 500ms ease;    
     color: white;    
-    padding: 15px 25px 15px;
+    padding: 17px 25px 15px;
     outline: none !important;
     text-transform: uppercase;
     font-family: 'Glober';
     font-size: 14px;
     box-sizing: border-box;
     border: 2px solid $primary-color;
+    line-height: 15px;
 
     @include mobile {
       width: 234px;

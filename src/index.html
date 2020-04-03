@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cargo-buyer</title>
 </head>
 
 <body>
@@ -37,8 +37,7 @@
                         <div class="header__close">&#10006;</div>
                     </div>
                 </div>
-
-                <div class="header__top">
+                <div class="header__top" data-aos="fade-down">
                     <div class="header__left">
                         <div class="header__wrapper-menu">
                             <div class="header__menu"></div>
@@ -48,13 +47,24 @@
                             <span class="header__logo-subtitle">Логистика для байеров</span>
                         </div>
                     </div>
+                    <div class="header__center">
+                        <a href='#' class="header__center-text">Instagram Direct</a>
+                        <img src="./assets/img/jpg/insta_red_logo.jpg" alt="" class="header__center-img">
+                    </div>
                     <div class="header__right">
                         <a href="tel:+7 123 456 78" class="header__phone">+7 123 456 78</a>
-                        <span class="header__adress">Адрес и время работы</span>
+                        <div class="header__adress">Адрес и время работы
+                            <div class="header__adress-inform">
+                                <p class="header__adress-title"><span>Склад:</span> г.Москва, поселение Мосрентген,
+                                    логистический центр Славянский мир, 25 </p>
+                                <span class="header__adress-text">Доставка и выдача: ежедневно</span>
+                                <span class="header__adress-time">Отдел продаж: пн-пт 10:00 – 18:00 </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="header__middle">
-                    <h1 class="header__title">Доставляем товары<span> из&nbsp;Европы и США для байеров</span></h1>
+                <div class="header__middle" data-aos="zoom-in">
+                    <h1 class="header__title">Доставляем товары</br><span> из&nbsp;Европы и США для байеров</span></h1>
                     <span class="header__subtitle">Сами отправляем по адресам ваших клиентов</span>
                     <div class="header__wrapper-btn">
                         <button class="btn header__btn">рассчитать стоимость
@@ -70,7 +80,7 @@
                             за сохранность груза</li>
                     </ul>
                 </div>
-                <div class="header__bottom format">
+                <div class="header__bottom format" data-aos="flip-right">
                     <h2 class="format__title title">2 удобных формата работы с нами:
                     </h2>
                     <div class="format__subtitle">
@@ -133,42 +143,42 @@
                     <h2 class="products__title title">Какие товары мы доставляем:
                     </h2>
                     <ul class="products__list">
-                        <li class="products__item">
+                        <li class="products__item" data-aos="zoom-in">
                             <img src="./assets/img/png/1icon.png" alt="" class="products__img">
                             <span class="products__desc">
                                 Одежда,
                                 обувь
                             </span>
                         </li>
-                        <li class="products__item">
+                        <li class="products__item" data-aos="zoom-in" data-aos-delay="100">
                             <img src="./assets/img/png/2icon.png" alt="" class="products__img">
                             <span class="products__desc">
                                 Сумки,
                                 чемоданы
                             </span>
                         </li>
-                        <li class="products__item">
+                        <li class="products__item" data-aos="zoom-in" data-aos-delay="200">
                             <img src="./assets/img/png/3icon.png" alt="" class="products__img">
                             <span class="products__desc">
                                 Косметика,
                                 БАДы
                             </span>
                         </li>
-                        <li class="products__item">
+                        <li class="products__item" data-aos="zoom-in" data-aos-delay="300">
                             <img src="./assets/img/png/4icon.png" alt="" class="products__img">
                             <span class="products__desc">
                                 Домашний
                                 текстиль
                             </span>
                         </li>
-                        <li class="products__item">
+                        <li class="products__item" data-aos="zoom-in" data-aos-delay="400">
                             <img src="./assets/img/png/5icon.png" alt="" class="products__img">
                             <span class="products__desc">
                                 Запасные
                                 части
                             </span>
                         </li>
-                        <li class="products__item">
+                        <li class="products__item" data-aos="zoom-in" data-aos-delay="500">
                             <img src="./assets/img/png/6icon.png" alt="" class="products__img">
                             <span class="products__desc">
                                 Запасные
@@ -181,77 +191,82 @@
         </section>
         <section class="calc">
             <div class="container">
-                <div class="cacl__inner">
+                <div class="cacl__inner" data-aos="zoom-in-up">
                     <h2 class="calc__title title">Рассчитайте точную стоимость доставки груза</h2>
                     <form class="calc__form" method="POST" action="./send.php">
-                        <div class="calc__row calc__row-top">
-                            <div class="calc__col">
-                                <label class="calc__label form__label">1.Выберите категорию груза:</label>
-                                <select class="calc__select" id="js-cargo" name="products">
-                                    <option value="Одежда" selected="selected">Одежда</option>
-                                    <option value="Обувь">Обувь</option>
-                                    <option value="Сумки">Сумки</option>
-                                    <option value="Ремни">Ремни</option>
-                                    <option value="Чемоданы">Чемоданы</option>
-                                    <option value="Дорожные	сумки">Дорожные сумки</option>
-                                    <option value="БАДы">БАДы</option>
-                                    <option value="Рыболовные	снасти">Рыболовные снасти</option>
-                                    <option value="Запчасти">Запчасти</option>
-                                    <option value="Косметика">Косметика</option>
-                                    <option value="
-                                    Домашний текстиль">
-                                        Домашний текстиль</option>
-                                </select>
+                        <div class="calc__top">
+                            <div class="calc__row ">
+                                <div class="calc__col">
+                                    <label class="calc__label form__label">1.Выберите категорию груза:</label>
+                                    <select class="calc__select" id="js-cargo" name="products">
+                                        <option value="Одежда" selected="selected">Одежда</option>
+                                        <option value="Обувь">Обувь</option>
+                                        <option value="Сумки">Сумки</option>
+                                        <option value="Ремни">Ремни</option>
+                                        <option value="Чемоданы">Чемоданы</option>
+                                        <option value="Дорожные	сумки">Дорожные сумки</option>
+                                        <option value="БАДы">БАДы</option>
+                                        <option value="Рыболовные	снасти">Рыболовные снасти</option>
+                                        <option value="Запчасти">Запчасти</option>
+                                        <option value="Косметика">Косметика</option>
+                                        <option value="
+                                        Домашний текстиль">
+                                            Домашний текстиль</option>
+                                    </select>
+                                </div>
+                                <div class="calc__col">
+                                    <label class="calc__label form__label">Введите вес, кг:
+                                    </label>
+                                    <input type="number" placeholder='25' class="calc__input form__input" name="weight">
+                                </div>
+                                <div class="calc__col">
+                                    <label class="calc__label form__label">3.Выберите страну отправки груза:</label>
+                                    <select class="calc__select" id="js-cargo" name="countries">
+                                        <option value="Бельгия" selected="selected">Бельгия</option>
+                                        <option value="Великобритания">Великобритания</option>
+                                        <option value="Германия">Германия</option>
+                                        <option value="Греция">Греция</option>
+                                        <option value="Испания">Испания</option>
+                                        <option value="Италия">Италия</option>
+                                        <option value="Китай">Китай</option>
+                                        <option value="Польша">Польша</option>
+                                        <option value="США">США</option>
+                                        <option value="Франция">Франция</option>
+                                        <option value="Прочие страны мира">Прочие страны мира</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="calc__col">
-                                <label class="calc__label form__label">Введите вес, кг:
-                                </label>
-                                <input type="number" placeholder='25' class="calc__input form__input" name="weight">
-                            </div>
-                            <div class="calc__col">
-                                <label class="calc__label form__label">3.Выберите страну отправки груза:</label>
-                                <select class="calc__select" id="js-cargo" name="countries">
-                                    <option value="Бельгия" selected="selected">Бельгия</option>
-                                    <option value="Великобритания">Великобритания</option>
-                                    <option value="Германия">Германия</option>
-                                    <option value="Греция">Греция</option>
-                                    <option value="Испания">Испания</option>
-                                    <option value="Италия">Италия</option>
-                                    <option value="Китай">Китай</option>
-                                    <option value="Польша">Польша</option>
-                                    <option value="США">США</option>
-                                    <option value="Франция">Франция</option>
-                                    <option value="Прочие страны мира">Прочие страны мира</option>
-                                </select>
-                            </div>
-
+                            <button class="calc__btn calc__next btn">Далее</button>
                         </div>
-                        <div class="calc__row calc__row-bottom">
-                            <div class="calc__col">
-                                <label class="calc__label form__label"> 4. Введите ваше имя:
-                                </label>
-
-                                <input type="text" class="calc__input form__input" name='name'>
+                        <div class="calc__bottom">
+                            <div class="calc__row">
+                                <div class="calc__col">
+                                    <label class="calc__label form__label"> 4. Введите ваше имя:
+                                    </label>
+    
+                                    <input type="text" class="calc__input form__input" name='name'>
+                                </div>
+                                <div class="calc__col">
+                                    <label class="calc__label form__label">5. Введите ваш номер телефона: </label>
+    
+                                    <input type="text" class="calc__input form__input" name='phone'>
+                                </div>
+                                <div class="calc__col">
+                                    <label class="calc__label form__label"> 6. Ваш аккаунт Instagram:
+                                    </label>
+    
+                                    <input type="text" class="calc__input form__input" name='instagram'>
+                                </div>
                             </div>
-                            <div class="calc__col">
-                                <label class="calc__label form__label">5. Введите ваш номер телефона: </label>
+                            <button class="calc__btn btn" type="submit">расчитать стоимость
+                                <img src="./assets/img/png/Layer 131 copy 2@1X.png" alt="img" class="header__btn-img">
+                            </button>
+                            <p class="calc__text">
+                                После нажатия на кнопку вы будете
+                                перенаправлены на страницу расчета
+                            </p>
+                        </div>                  
 
-                                <input type="text" class="calc__input form__input" name='phone'>
-                            </div>
-                            <div class="calc__col">
-                                <label class="calc__label form__label"> 6. Ваш аккаунт Instagram:
-                                </label>
-
-                                <input type="text" class="calc__input form__input" name='instagram'>
-                            </div>
-                        </div>
-                        <button class="calc__btn btn" type="submit">расчитать стоимость
-                            <img src="./assets/img/png/Layer 131 copy 2@1X.png" alt="img" class="header__btn-img">
-                        </button>
-                        <p class="calc__text">
-                            После нажатия на кнопку вы будете
-                            перенаправлены на страницу расчета
-                        </p>
                         <input type="hidden" name="type" value="Калькулятор" />
                         <input type="hidden" name="utm_term" value="" />
                         <input type="hidden" name="utm_source" value="" />
@@ -268,19 +283,19 @@
                     <h2 class="example__title title">Рассказываем на примере с Италией,
                         как работает наш пакет «Под ключ»</h2>
                     <ul class="example__list">
-                        <li class="example__item">
+                        <li class="example__item" data-aos="flip-down">
                             <img src="./assets/img/jpg/Alice_1.jpg" alt="" class="example__img">
                             <span class="example__desc">Байер Алиса находит клиентов через Instagram и предлагает им
                                 выгодные цены на модную одежду, обувь и аксессуары.
                                 Алиса закупает все товары в Италии с выгодой 25-40%, поэтому у нее много заказов</span>
                         </li>
-                        <li class="example__item">
+                        <li class="example__item" data-aos="flip-down">
                             <img src="./assets/img/jpg/Alice_2.jpg" alt="" class="example__img">
                             <span class="example__desc">У Алисы на этой неделе заказали 3 пары обуви, 2 сумки и пальто.
                                 Алиса понимает, что клиенты не хотят долго ждать, поэтому обращается
                                 в Cargo-byer.ru</span>
                         </li>
-                        <li class="example__item">
+                        <li class="example__item" data-aos="flip-down">
                             <img src="./assets/img/jpg/Alice_3.jpg" alt="" class="example__img">
                             <span class="example__desc">В Cargo-byer Алисе предлагают вариант, который значительно
                                 сэкономит ее время и деньги: компания сама заберет ее скомплектованный заказ в Италии,
@@ -288,7 +303,7 @@
                                 срок доставки и Алиса может точно сказать свои клиентам, когда они получат свой
                                 заказ</span>
                         </li>
-                        <li class="example__item">
+                        <li class="example__item" data-aos="flip-down">
                             <img src="./assets/img/jpg/Alice_4.jpg" alt="" class="example__img">
                             <span class="example__desc">Что нужно сделать Алисе? Ей нужно скомплектовать 1 коробку с
                                 двумя коробками внутри (для каждого клиента). Когда весь заказ Алисы попадает на склад в
@@ -296,14 +311,14 @@
                                 - Коробка 1: для ФИО, клиент сам заберет ее на складе в Москве
                                 - Коробка 2: для ФИО, заказ нужно отправить в Смоленск</span>
                         </li>
-                        <li class="example__item">
+                        <li class="example__item" data-aos="flip-down">
                             <img src="./assets/img/jpg/Alice_5.jpg" alt="" class="example__img">
                             <span class="example__desc">К моменту прибытия заказа Алисы на склад в Москву, сотрудники
                                 уже знают, как распределить каждую коробку и поэтому делают все быстро и без задержек.
                                 Как и просила Алиса, одному клиенту отдают заказ на складе, другому отправляют
                                 транспортной компанией в Смоленск.</span>
                         </li>
-                        <li class="example__item">
+                        <li class="example__item" data-aos="flip-down">
                             <img src="./assets/img/jpg/Alice_6.jpg" alt="" class="example__img">
                             <span class="example__desc">Алиса счастлива – ей не пришлось тратить свое время, чтобы самой
                                 забрать заказ со склада и отправлять клиентам. Это время Алиса потратила на поиск новых
@@ -371,21 +386,21 @@
                 <div class="price__inner">
                     <h2 class="price__title title">Посмотрите полный прайс на наши услуги</h2>
                     <ul class="price__list">
-                        <li class="price__item">
+                        <li class="price__item" data-aos="fade-up">
                             <img src="./assets/img/png/7icon.png" alt="" class="price__img">
                             <p class="price__desc">
                                 Минимальный<br />
                                 заказ 200 $
                             </p>
                         </li>
-                        <li class="price__item">
+                        <li class="price__item" data-aos="fade-up" data-aos-delay="100">
                             <img src="./assets/img/png/8icon.png" alt="" class="price__img">
                             <p class="price__desc">
                                 Несем финансовые гарантии
                                 за сохранность груза
                             </p>
                         </li>
-                        <li class="price__item">
+                        <li class="price__item" data-aos="fade-up" data-aos-delay="200">
                             <img src="./assets/img/png/9icon.png" alt="" class="price__img">
                             <p class="price__desc">
                                 Доставка из Вильнюса
@@ -394,7 +409,7 @@
                         </li>
                     </ul>
                     <div class="container">
-                        <form class="price__form form">
+                        <form class="price__form form" >
                             <h3 class="form__title">Прайс-лист на доставку грузов</h3>
                             <label for="" class="form__label"> Введите ваш номер телефона:
                                 <input type="text" class="form__input">
@@ -413,19 +428,21 @@
                 <div class="about-us__inner">
                     <h2 class="about-us__title title">Познакомьтесь с нашей компанией
                     </h2>
-                    <div class="about-us__wrapper">
-                        <span class="about-us__left">
-                            CARGO-Buyer
-                        </span>
-                        <div class="about-us__right">
-                            <p class="about-us__desc"> Международная логистическая компания. Уже 5 лет мы перевозим
-                                грузы из любой точки мира всеми видами транспорта:</p>
-                            <ul class="about-us__list">
-                                <li class="about-us__item">автомобильным</li>
-                                <li class="about-us__item">авиа</li>
-                                <li class="about-us__item">морским</li>
-                                <li class="about-us__item">железнодорожным</li>
-                            </ul>
+                    <div class="about-us__wrapper" data-aos="zoom-in-up">
+                        <div class="about-us__border">
+                            <span class="about-us__left">
+                                CARGO-Buyer
+                            </span>
+                            <div class="about-us__right">
+                                <p class="about-us__desc"> Международная логистическая компания. Уже 5 лет мы перевозим
+                                    грузы из любой точки мира всеми видами транспорта:</p>
+                                <ul class="about-us__list">
+                                    <li class="about-us__item">автомобильным</li>
+                                    <li class="about-us__item">авиа</li>
+                                    <li class="about-us__item">морским</li>
+                                    <li class="about-us__item">железнодорожным</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <p class="about-us__text">
@@ -464,7 +481,7 @@
         </section>
         <section class="contacts">
             <div class="container">
-                <div class="contacts__inner">
+                <div class="contacts__inner" data-aos="zoom-in-up">
                     <h2 class="contacts__title title">Наши контакты</h2>
                     <div class="contacts__wrapper">
                         <div class="contacts__left">
