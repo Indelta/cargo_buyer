@@ -275,12 +275,41 @@
   }
 
   &__title {
+    position: relative;
     font-family: 'Glober';
     font-size: 36px;
     font-weight: 900;
     max-width: 530px;
     width: 100%;
     line-height: 56px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: -40px;
+      height: 1px;
+      width: 245px;
+      background-color: black;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: -30px;
+      left: -40px;
+      height: 150px;
+      width: 1px;
+      background-color: black;
+
+      @include mobile {
+        display: none;
+      }
+    }
 
     @include mobile {
       font-size: 29px;
@@ -294,11 +323,26 @@
   }
 
   &__subtitle {
+    position: relative;
     margin-top: 29px;
     font-family: 'Glober';
     font-weight: 700;
     font-size: 25px;
     color: $primary-color;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: -40px;
+      height: 1px;
+      width: 30px;
+      background-color: black;
+
+      @include mobile {
+        display: none;
+      }
+    }
 
     @include mobile {
       margin-top: 10px;

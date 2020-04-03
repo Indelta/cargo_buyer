@@ -9,7 +9,7 @@
   }
 
   &__title {
-    color: white;
+    color: white;    
   }
 
   &__list {
@@ -79,10 +79,33 @@
 
 .form {
   &__title {
+    position: relative;
     font-family: 'Glober';
     font-size: 20px;
     font-weight: 900;
     text-align: center;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -48px;
+      top: 30px;
+      width: 77px;
+      height: 212px;
+      border-left: 1px solid black;
+      border-bottom: 1px solid black;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      right: -48px;
+      top: 30px;
+      width: 77px;
+      height: 212px;
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+    }
 
     @include mobile {
       font-size: 18px;
