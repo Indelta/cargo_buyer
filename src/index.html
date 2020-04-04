@@ -16,22 +16,22 @@
                     <div class="container">
                         <ul class="header__items">
                             <li class="header__cell">
-                                <a href="" class="header__link">Наши пакеты</a>
+                                <a href="" class="header__link" data-scroll='format'>Наши пакеты</a>
                             </li>
                             <li class="header__cell">
-                                <a href="" class="header__link">Калькулятор стоимости</a>
+                                <a href="" class="header__link" data-scroll='calc'>Калькулятор стоимости</a>
                             </li>
                             <li class="header__cell">
-                                <a href="" class="header__link">Как мы работаем</a>
+                                <a href="" class="header__link" data-scroll='contacts'>Как мы работаем</a>
                             </li>
                             <li class="header__cell">
-                                <a href="" class="header__link">Прайс лист</a>
+                                <a href="" class="header__link" data-scroll='price'>Прайс лист</a>
                             </li>
                             <li class="header__cell">
-                                <a href="" class="header__link">О нас</a>
+                                <a href="" class="header__link" data-scroll='about-us'>О нас</a>
                             </li>
                             <li class="header__cell">
-                                <a href="" class="header__link">Контакты</a>
+                                <a href="" class="header__link" data-scroll='contacts'>Контакты</a>
                             </li>
                         </ul>
                         <div class="header__close">&#10006;</div>
@@ -48,11 +48,11 @@
                         </div>
                     </div>
                     <div class="header__center">
-                        <a href='#' class="header__center-text">Instagram Direct</a>
+                        <a target="_blank" href='https://www.instagram.com/?hl=ru' class="header__center-text">Instagram Direct</a>
                         <img src="./assets/img/jpg/insta_red_logo.jpg" alt="" class="header__center-img">
                     </div>
                     <div class="header__right">
-                        <a href="tel:+7 123 456 78" class="header__phone">+7 123 456 78</a>
+                        <a href="tel:+7 123 456 78" class="header__phone">+4 547 8 18 60</a>
                         <div class="header__adress">Адрес и время работы
                             <div class="header__adress-inform">
                                 <p class="header__adress-title"><span>Склад:</span> г.Москва, поселение Мосрентген,
@@ -67,10 +67,10 @@
                     <h1 class="header__title">Доставляем товары</br><span> из&nbsp;Европы и США для байеров</span></h1>
                     <span class="header__subtitle">Сами отправляем по адресам ваших клиентов</span>
                     <div class="header__wrapper-btn">
-                        <button class="btn header__btn">рассчитать стоимость
+                        <button class="btn header__btn" data-scroll='calc'>рассчитать стоимость
                             <img src="./assets/img/png/Layer 131 copy 2@1X.png" alt="img" class="header__btn-img">
                         </button>
-                        <button class="btn btn-transparent">просмотреть прайс-лист</button>
+                        <button class="btn btn-transparent" data-scroll='price'>просмотреть прайс-лист</button>
                     </div>
                     <ul class="header__list">
                         <li class="header__item">Стоимость 5 $/кг, доставим от Вильнюса до Москвы за 3-5 дней</li>
@@ -80,7 +80,7 @@
                             за сохранность груза</li>
                     </ul>
                 </div>
-                <div class="header__bottom format" data-aos="flip-right">
+                <div class="header__bottom format" data-aos="flip-right" id='format'>
                     <h2 class="format__title title">2 удобных формата работы с нами:
                     </h2>
                     <div class="format__subtitle">
@@ -103,7 +103,7 @@
                                     Москве или мы отправляем его вам через
                                     транспортную компанию</li>
                             </ul>
-                            <button class="btn format__left-btn">
+                            <button class="btn format__left-btn" data-scroll='price'>
                                 посмотреть прайс-лист
                                 <img src="./assets/img/png/Layer 131 copy 2@1X.png" alt="img" class="header__btn-img">
                             </button>
@@ -126,7 +126,7 @@
                                     отправляем ее в любую точку РФ через транспортную
                                     компанию</li>
                             </ul>
-                            <button class="btn format__right-btn">
+                            <button class="btn format__right-btn" data-scroll='calc'>
                                 расчитать стоимость
                                 <img src="./assets/img/png/Layer 131 copy 2@1X.png" alt="img" class="header__btn-img">
                             </button>
@@ -189,7 +189,7 @@
                 </div>
             </div>
         </section>
-        <section class="calc">
+        <section class="calc" id='calc'>
             <div class="container">
                 <div class="cacl__inner" data-aos="zoom-in-up">
                     <h2 class="calc__title title">Рассчитайте точную стоимость доставки груза</h2>
@@ -249,7 +249,7 @@
                                 <div class="calc__col">
                                     <label class="calc__label form__label">5. Введите ваш номер телефона: </label>
     
-                                    <input type="text" class="calc__input form__input" name='phone'>
+                                    <input type="text" class="calc__input form__input" name='phone' id='id-phone'>
                                 </div>
                                 <div class="calc__col">
                                     <label class="calc__label form__label"> 6. Ваш аккаунт Instagram:
@@ -381,7 +381,7 @@
                 </div>
             </div>
         </section>
-        <section class="price">
+        <section class="price" id='price'>
             <div class="container">
                 <div class="price__inner">
                     <h2 class="price__title title">Посмотрите полный прайс на наши услуги</h2>
@@ -412,7 +412,7 @@
                         <form class="price__form form" >
                             <h3 class="form__title">Прайс-лист на доставку грузов</h3>
                             <label for="" class="form__label"> Введите ваш номер телефона:
-                                <input type="text" class="form__input">
+                                <input type="text" class="form__input" name='phone' id='id-phone'>
                             </label>
                             <button class="btn form__btn">
                                 перейти в прайс
@@ -423,7 +423,7 @@
                 </div>
             </div>
         </section>
-        <section class="about-us">
+        <section class="about-us" id='about-us'>
             <div class="container">
                 <div class="about-us__inner">
                     <h2 class="about-us__title title">Познакомьтесь с нашей компанией
@@ -479,7 +479,7 @@
                 </div>
             </div>
         </section>
-        <section class="contacts">
+        <section class="contacts" id='contacts'>
             <div class="container">
                 <div class="contacts__inner" data-aos="zoom-in-up">
                     <h2 class="contacts__title title">Наши контакты</h2>
@@ -517,7 +517,7 @@
                     </div>
                 </div>
                 <div class="header__right">
-                    <a href="tel:+7 123 456 78" class="header__phone">+7 123 456 78</a>
+                    <a href="tel:+7 123 456 78" class="header__phone">+4 547 8 18 60</a>
                 </div>
             </div>
 
