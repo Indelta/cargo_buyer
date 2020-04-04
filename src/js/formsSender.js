@@ -41,14 +41,14 @@ export const calcSender = (form) => {
     // todo error phone
   } else {
     // sendForm(data, './send.php');
-    $.ajax({
-      processData: false,
-      contentType: false,
-      url: "./send.php",
-      method: "POST",
-      data: data,
-      cache: false,
-      success: function (res) {
+    // $.ajax({
+    //   processData: false,
+    //   contentType: false,
+    //   url: "./send.php",
+    //   method: "POST",
+    //   data: data,
+    //   cache: false,
+    //   success: function (res) {
         // $(form).reset();
         document.querySelector(".calc__inner").style.display = "none";
         document.querySelector(".thanks__inner").style.display = "flex";
@@ -69,29 +69,29 @@ export const calcSender = (form) => {
         // ym(45709953, 'reachGoal', 'RaschetFinal');
         // gtag('event', 'send', {'event_category': 'Btn', 'event_action': 'Click', 'event_label': 'RaschetFinal' });
         // показываем thankyou page
-      },
-    });
+    //   },
+    // });
   }
 };
 
 export const getPrice = (form) => {
   const formElem = document.querySelector(".price__form");
   const data = new FormData(formElem);
-  console.log(data);
 
-  $.ajax({
-    processData: false,
-    contentType: false,
-    method: "POST",
-    url: "./send.php",
-    data: data,
-    success: (res) => {
-      console.log($("#open-pdf"));
-      console.log(res);
+  // $.ajax({
+  //   processData: false,
+  //   contentType: false,
+  //   method: "POST",
+  //   url: "./send.php",
+  //   data: data,
+  //   success: (res) => {
+
       document.querySelector("#open-pdf").click();
       if (res === "1") {
         document.querySelector("#open-pdf").click();
       }
-    },
-  });
+
+  //   },
+  // });
+
 };
