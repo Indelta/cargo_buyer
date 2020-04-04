@@ -85,11 +85,11 @@ module.exports = {
         port: 8081,
         hot: isDev,
         contentBase: path.join(__dirname, 'src'),
-        proxy: {
-            '/send.php': {
-                target: 'http://localhost/cargo_buyer/dist/send.php'
-            }
-        }
+        // proxy: {
+        //     '/send.php': {
+        //         target: 'http://localhost/cargo_buyer/dist/send.php'
+        //     }
+        // }
     },
     plugins: [
         new HTMLWebpackPlugin({

@@ -44,7 +44,7 @@ export const calcSender = form => {
     $.ajax({
       processData: false,
       contentType: false,
-      'url': '/send.php',
+      'url': 'send.php',
       'method': 'POST',
       data: data,
       cache: false,
@@ -88,7 +88,7 @@ export const getPrice = form => {
     processData: false,
     contentType: false,
     method: 'POST',
-    url: '/send.php',
+    url: 'send.php',
     data: data,
     success: (res) => {
       console.log( $('#open-pdf'));
