@@ -85,11 +85,11 @@ module.exports = {
         port: 8081,
         hot: isDev,
         contentBase: path.join(__dirname, 'src'),
-        // proxy: {
-        //     '/send.php': {
-        //         target: 'http://localhost/cargo_buyer/dist/send.php'
-        //     }
-        // }
+        proxy: {
+            '/send.php': {
+                target: 'http://localhost/cargo_buyer/dist/send.php'
+            }
+        }
     },
     plugins: [
         new HTMLWebpackPlugin({
@@ -100,8 +100,8 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             {
-                from: path.resolve(__dirname, 'src/assets/img'),
-                to: path.resolve(__dirname, 'dist/assets/img')
+                from: path.resolve(__dirname, 'src/assets'),
+                to: path.resolve(__dirname, 'dist/assets')
             },
             {
                 from: path.resolve(__dirname, 'src/leads.php'),
