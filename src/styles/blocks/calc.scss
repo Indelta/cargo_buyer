@@ -1,6 +1,7 @@
 .calc {
   padding: 44px 0 70px;
   background: url('../assets/img/jpg/bg_img.jpg') no-repeat;
+  background-size: cover;
 
   &__form {
     background-color: white;
@@ -107,7 +108,9 @@
     display: none;
 
     @include mobile {
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

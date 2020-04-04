@@ -54,5 +54,5 @@ const products = [
 export default function (category, weight) {
   const categoryObj = products.filter(product => product.category === category)[0];
   const mainCost = weight < 300 ? weight * categoryObj.smallCost : weight * categoryObj.bigCost;
-  return mainCost < 200 ? 200 : mainCost;
+  return mainCost
 }

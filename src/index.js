@@ -4,6 +4,7 @@ import Swiper from "swiper";
 import AOS from "aos";
 import Inputmask from "inputmask";
 import { calcSender } from "./js/formsSender";
+import { getPrice } from "./js/formsSender";
 import mobileMenu from "./js/mobile-menu";
 import tabManager from "./js/tab-manager";
 import calcManager from "./js/calc-manager";
@@ -48,6 +49,11 @@ document.addEventListener(
     $(".calc__form").on("submit", function (e) {
       e.preventDefault();
       calcSender($(this));
+    });
+
+    $(".price__form").on("submit", function (e) {
+      e.preventDefault();
+      getPrice($(this));
     });
 
     const mySwiper = new Swiper(".swiper-container", {

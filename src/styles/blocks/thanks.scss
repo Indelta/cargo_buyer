@@ -1,0 +1,123 @@
+.thanks {
+
+    &__inner {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__subtitle {
+        display: block;
+        position: relative;
+        margin-top: 30px;
+        font-family: 'Glober';
+        font-size: 20px;
+        font-weight: 700;
+
+        &:before {
+            content: '';
+            position: absolute;
+            background: url('../assets/img/png/Layer\ 1@1X.png');
+            left: -30px;
+            top: 40%;
+            width: 25px;
+            height: 25px;
+            transform: translateY(-50%);
+        }
+
+        @include mobile {
+            margin-top: 26px;
+            font-size: 14px;
+        }
+    }
+
+    &__wrapper {
+        box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+        margin-top: 14px;
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+    }
+
+    &__min {
+        display: none;
+        margin-top: 14px;
+        font-family: 'Glober';
+        font-size: 14px;
+        line-height: 20px;
+        width: 100%;
+        padding: 14px;
+        border: 2px solid $primary-color;
+        color: $primary-color;
+        text-align: center;
+    }
+
+    &__item {
+        margin-top: 20px;
+        font-family: 'Glober';
+        font-size: 14px;
+        font-weight: 700;
+        
+        span {
+            font-weight: 400;
+        }
+    }
+
+    &__cost-title {
+        margin-top: 37px;
+        align-self: center;
+        font-family: 'Glober';
+        font-size: 14;
+        font-weight: 700;
+        color: $primary-color;
+    }
+
+    &__cost {
+        margin-top: 27px;
+        align-self: center;
+        font-family: 'Glober';
+        font-size: 56px;
+        font-weight: 400;
+    }
+
+    &__items {
+        margin-top: 27px;
+        padding: 20px 0;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+
+    &__cell {
+        font-family: 'Glober';
+        font-weight: 700;
+        font-size: 14px;
+        margin-left: 22px;
+
+
+
+        &:not(:first-child) {
+            position: relative;
+            margin-top: 30px;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: -22px;
+                top: 40%;
+                transform: translateY(-50%);
+                background: url('../assets/img/png/Layer\ 38\ copy\ 5@1X.png');
+                height: 12px;
+                width: 17px;
+            }
+        }
+    }
+
+    &__bottom {
+        margin-top: 19px;
+        font-family: 'Glober';
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 20px
+    }
+}

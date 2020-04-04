@@ -8,7 +8,6 @@
 </head>
 
 <body>
-    <a href="./assets/price/Cargo_bayer_price.pdf" target="_blank" id="open-pdf" style="display:none"></a>
     <header class="header">
         <div class="container">
             <div class="header__inner">
@@ -181,8 +180,7 @@
                         <li class="products__item" data-aos="zoom-in" data-aos-delay="500">
                             <img src="./assets/img/png/6icon.png" alt="" class="products__img">
                             <span class="products__desc">
-                                Запасные
-                                части
+                               Рыболовные снасти
                             </span>
                         </li>
                     </ul>
@@ -191,9 +189,9 @@
         </section>
         <section class="calc" id='calc'>
             <div class="container">
-                <div class="cacl__inner" data-aos="zoom-in-up">
+                <div class="calc__inner" data-aos="zoom-in-up">
                     <h2 class="calc__title title">Рассчитайте точную стоимость доставки груза</h2>
-                    <form class="calc__form" method="POST" action="./send.php">
+                    <form class="calc__form" name='calc' id='calc'>              
                         <div class="calc__top">
                             <div class="calc__row ">
                                 <div class="calc__col">
@@ -236,7 +234,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <button class="calc__btn calc__next btn">Далее</button>
+                            <div class="calc__btn calc__next btn">Далее</div>
                         </div>
                         <div class="calc__bottom">
                             <div class="calc__row">
@@ -258,7 +256,7 @@
                                     <input type="text" class="calc__input form__input" name='instagram'>
                                 </div>
                             </div>
-                            <button class="calc__btn btn" type="submit">расчитать стоимость
+                            <button class="calc__btn btn" type="submit" value='рассчитать стоимость'>рассчитать стоимость
                                 <img src="./assets/img/png/Layer 131 copy 2@1X.png" alt="img" class="header__btn-img">
                             </button>
                             <p class="calc__text">
@@ -274,6 +272,44 @@
                         <input type="hidden" name="utm_campaign" value="" />
                         <input type="hidden" name="utm_content" value="" />
                     </form>
+                </div>
+                <div class="thanks__inner">
+                    <p class="thanks__title title">Прайс-лист
+                        на доставку грузов</p>
+                    <span class="thanks__subtitle">Минимальный заказ – 200$</span>
+                    <div class="thanks__wrapper">
+                        <ul class="thanks__list">
+                            <li class="thanks__item">
+                                Тип груза:
+                                <span class="thanks__cargo"></span>
+                            </li>
+                            <li class="thanks__item">
+                                Вес груза:
+                                <span class="thanks__weight"></span>
+                            </li>
+                            <li class="thanks__item">
+                                Страна отправки:
+                                <span class="thanks__country"></span>
+                            </li>
+                        </ul>
+                        <span class="thanks__cost-title">Стоимость доставки вашего груза:</span>
+                        <span class="thanks__cost"></span>
+                        <span class="thanks__min">Вы можете привезти ещё больше
+                            груза за эти же деньги</span>
+                        <ul class="thanks__items">
+                            <li class="thanks__cell">В стоимость включено:</li>
+                            <li class="thanks__cell">Доставка Вильнюс-Москва</li>
+                            <li class="thanks__cell">Таможенное оформление</li>
+                            <li class="thanks__cell">Финансовая гарантия</li>
+                        </ul>
+                        <p class="thanks__bottom">*Доставка от склада отправителя 
+                            до Вильнюса рассчитывается 
+                            индивидуально в зависимости 
+                            от параметров груза.Наши менеждеры 
+                            свяжутся с вами в рабочее время 
+                            (с 10:00 до 18:00 по МСК) 
+                            для консультации.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -412,7 +448,7 @@
                         <form class="price__form form" >
                             <h3 class="form__title">Прайс-лист на доставку грузов</h3>
                             <label for="" class="form__label"> Введите ваш номер телефона:
-                                <input type="text" class="form__input" name='phone' id='id-phone'>
+                                <input type="text" class="form__input" name="phone" id='id-phone'>
                             </label>
                             <button class="btn form__btn">
                                 перейти в прайс
@@ -504,7 +540,7 @@
             </div>
         </section>
     </main>
-    <fooote class="footer">
+    <footer class="footer">
         <div class="container">
             <div class="footer__inner">
                 <div class="header__left">
@@ -523,7 +559,8 @@
 
         </div>
 
-    </fooote>
+    </footer>
+    <a href="./assets/price/Cargo_bayer_price.pdf" target="_blank" id="open-pdf"></a>
 
 
 
