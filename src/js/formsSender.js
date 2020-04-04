@@ -1,21 +1,21 @@
 import * as $ from 'jquery';
 import calcManager from './calc';
 
-function sendForm(data, url) {
-  return new Promise((resolve, reject) => {
-    let XHR = new XMLHttpRequest();
-    XHR.open('POST', url);
-    XHR.onreadystatechange = function() {
-        if(this.readyState === 4) {
-            if(this.status == 200) resolve(this.responseText);
-            else reject({error: true, status: this.status, message: this.statusText});
-        }
-        else return;
-    }
+// function sendForm(data, url) {
+//   return new Promise((resolve, reject) => {
+//     let XHR = new XMLHttpRequest();
+//     XHR.open('POST', url);
+//     XHR.onreadystatechange = function() {
+//         if(this.readyState === 4) {
+//             if(this.status == 200) resolve(this.responseText);
+//             else reject({error: true, status: this.status, message: this.statusText});
+//         }
+//         else return;
+//     }
     
-    XHR.send(data);
-});
-}
+//     XHR.send(data);
+// });
+// }
 
 export const calcSender = form => {
   const path = $(form).attr('action');
@@ -37,21 +37,21 @@ export const calcSender = form => {
   }
   else {
     sendForm(data, './send.php');
-    // $.ajax({
-    //   'url': 'send.php',
-    //   'method': 'POST',
-    //   data: data,
-    //   cache: false,
-    //   success: function(res) {
-    //     $(form).reset(); // form.trigger('reset');
-    //     btn.prop('disabled', false).val(btnVal);
-    //     console.log(res);
-    //     // срабатывание целей Google, Yandex, etc.
-    //     // ym(45709953, 'reachGoal', 'RaschetFinal');
-    //     // gtag('event', 'send', {'event_category': 'Btn', 'event_action': 'Click', 'event_label': 'RaschetFinal' });
-    //     // показываем thankyou page
-    //   }
-    // });
+    $.ajax({
+      'url': 'send.php',
+      'method': 'POST',
+      data: data,
+      cache: false,
+      success: function(res) {
+        $(form).reset(); // form.trigger('reset');
+        btn.prop('disabled', false).val(btnVal);
+        console.log(res);
+        // срабатывание целей Google, Yandex, etc.
+        // ym(45709953, 'reachGoal', 'RaschetFinal');
+        // gtag('event', 'send', {'event_category': 'Btn', 'event_action': 'Click', 'event_label': 'RaschetFinal' });
+        // показываем thankyou page
+      }
+    });
   }
 } 
 

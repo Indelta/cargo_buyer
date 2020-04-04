@@ -10,6 +10,10 @@ export default function mobileMenu() {
   closeBtn.addEventListener('click', () => {
     remove(menu)
   })
+
+  menu.addEventListener('click', () => {
+    remove(menu)
+  })
 }
 
 function add(element) {
