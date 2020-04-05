@@ -30,7 +30,6 @@ export const calcSender = (form) => {
   data.append("finalCost", finalCost);
   const btn = document.querySelector('button[type="submit"]');
   const btnVal = btn.value;
-  console.log(btn);
 
   btn.disabled = true;
   btn.value = "Отправка...";
@@ -50,8 +49,7 @@ export const calcSender = (form) => {
     //   cache: false,
     //   success: function (res) {
         // $(form).reset();
-        document.querySelector(".calc__inner").style.display = "none";
-        document.querySelector(".thanks__inner").style.display = "flex";
+        document.querySelector(".calc").classList.add('show'); 
         document.querySelector(".thanks__cargo").innerHTML = productType;
         document.querySelector(".thanks__weight").innerHTML = weight + "кг";
         document.querySelector(".thanks__country").innerHTML = country;

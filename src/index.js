@@ -70,7 +70,7 @@ document.addEventListener(
 
     const selector = document.querySelectorAll("#id-phone");
 
-    const im = new Inputmask({"mask": "+7 (***) 999-99-99"});
+    const im = new Inputmask({"mask": "+4 (999) 999-99-99"});
     im.mask(selector);
   },
   false

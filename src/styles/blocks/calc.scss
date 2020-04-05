@@ -3,6 +3,18 @@
   background: url('../assets/img/jpg/bg_img.jpg') no-repeat;
   background-size: cover;
 
+  &.show {
+    .calc {
+      &__inner {
+        display: none;
+      }
+    }
+
+    .thanks {
+      display: block;
+    }
+  }
+
   &__form {
     background-color: white;
     margin-top: 40px;
@@ -47,6 +59,12 @@
 
   &__bottom {
     padding: 20px 50px 25px 35px;
+    display: flex;
+    flex-direction: column;   
+
+    input {
+      height: 50px;
+    }
 
     @include tablet-and-mobile {
       padding: 25px;
@@ -90,18 +108,26 @@
   &__text {
     width: 210px;
     margin: 0 auto;
-    padding-bottom: 30px;
     font-family: 'Glober';
     font-weight: 400;
     font-size: 12px;
     text-align: center;
     line-height: 20px;
+
+    @include mobile {
+      margin: 16px auto 0;      
+    }
   }
 
   &__btn {
     display: block;
     position: relative;
     margin: 35px auto 25px;
+    
+    @include mobile {      
+      margin: 19px auto 0;
+      order: 1;
+    }
   }
 
   &__next {
