@@ -46,9 +46,16 @@ document.addEventListener(
       anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
     });
 
+    // document.querySelector('.calc__form').addEventListener('submit', (e) => {
+    //   e.preventDefault();
+    //   calcSender($('.calc__form'));
+    // });
+    
+  
+
     $(".calc__form").on("submit", function (e) {
       e.preventDefault();
-      calcSender($(this));
+      calcSender($('.calc__form'));
     });
 
     $(".price__form").on("submit", function (e) {

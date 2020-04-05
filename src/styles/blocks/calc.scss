@@ -81,6 +81,23 @@
     }
   }
 
+  input[name="phone"] {
+
+
+
+    
+    &.animate {
+      animation-name: example;
+      animation-duration: .7s;
+      @keyframes example {
+        0%   {background-color: transparent;}
+        50%  {background-color: red;}
+        100% {background-color: transparent;}
+    }
+  }
+  }
+
+
   &__select {
     font-family: 'Glober';
     font-weight: 400;

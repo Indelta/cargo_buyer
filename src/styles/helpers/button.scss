@@ -27,6 +27,7 @@ button {
     box-sizing: border-box;
     border: 2px solid $primary-color;
     line-height: 15px;
+    cursor: pointer;
 
     @include mobile {
       width: 234px;

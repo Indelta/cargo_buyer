@@ -1,24 +1,8 @@
 import * as $ from "jquery";
 import calcManager from "./calc";
 
-// function sendForm(data, url) {
-//   return new Promise((resolve, reject) => {
-//     let XHR = new XMLHttpRequest();
-//     XHR.open('POST', url);
-//     XHR.onreadystatechange = function() {
-//         if(this.readyState === 4) {
-//             if(this.status == 200) resolve(this.responseText);
-//             else reject({error: true, status: this.status, message: this.statusText});
-//         }
-//         else return;
-//     }
-
-//     XHR.send(data);
-// });
-// }
-
 export const calcSender = (form) => {
-  const inputPhone = form.find('input[name="phone"]');
+  let inputPhone = form.find('input[name="phone"]').val().replace(/\D+/g, '');
   const productType = form.find('select[name="products"]').val();
   const country = form.find('select[name="countries"]').val();
   const weight = parseInt(form.find('input[name="weight"]').val(), 10)
@@ -28,17 +12,22 @@ export const calcSender = (form) => {
   const formElem = document.querySelector(".calc__form");
   const data = new FormData(formElem);
   data.append("finalCost", finalCost);
-  const btn = document.querySelector('button[type="submit"]');
+  const btn = document.querySelector('input[type="submit"]');
   const btnVal = btn.value;
+console.log(inputPhone);
 
-  btn.disabled = true;
-  btn.value = "Отправка...";
+  // btn.disabled = true;
+  // btn.value = "Отправка...";
   // btn.prop('disabled', true).val('Отправка...');
-  if (!inputPhone.val() || inputPhone.val() < 10) {
+  // if (inputPhone < 12) {
     // btn.prop('disabled', false).val(btnVal);
-    console.log("Phone error");
+    // btn.value = btnVal
+    // document.querySelector('input[name="phone"]').classList.remove('animate');
+    // document.querySelector('input[name="phone"]').classList.add('animate');
+    // btn.disabled = false;
+    // formElem.reset();
     // todo error phone
-  } else {
+  // } else {
     // sendForm(data, './send.php');
     // $.ajax({
     //   processData: false,
@@ -48,7 +37,8 @@ export const calcSender = (form) => {
     //   data: data,
     //   cache: false,
     //   success: function (res) {
-        // $(form).reset();
+    //     $(form).reset();
+      btn.value = btnVal
         document.querySelector(".calc").classList.add('show'); 
         document.querySelector(".thanks__cargo").innerHTML = productType;
         document.querySelector(".thanks__weight").innerHTML = weight + "кг";
@@ -59,9 +49,10 @@ export const calcSender = (form) => {
         } else {
           document.querySelector(".thanks__cost").innerHTML = finalCost + " $";
         }
-
-        form.trigger("reset");
-        btn.prop("disabled", false).val(btnVal);
+        btn.disabled = false;
+        formElem.reset();
+        // form.trigger("reset");
+        // btn.prop("disabled", false).val(btnVal);
 
         // срабатывание целей Google, Yandex, etc.
         // ym(45709953, 'reachGoal', 'RaschetFinal');
@@ -69,7 +60,7 @@ export const calcSender = (form) => {
         // показываем thankyou page
     //   },
     // });
-  }
+  // }
 };
 
 export const getPrice = (form) => {
