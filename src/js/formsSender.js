@@ -39,6 +39,7 @@ console.log(inputPhone);
     //   success: function (res) {
     //     $(form).reset();
       btn.value = btnVal
+        document.querySelector(".thanks__min").style.display = "none";
         document.querySelector(".calc").classList.add('show'); 
         document.querySelector(".thanks__cargo").innerHTML = productType;
         document.querySelector(".thanks__weight").innerHTML = weight + "кг";
