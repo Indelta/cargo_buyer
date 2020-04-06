@@ -54,6 +54,7 @@ document.addEventListener(
   
 
     $(".calc__form").on("submit", function (e) {
+      console.log('click');
       e.preventDefault();
       calcSender($('.calc__form'));
     });

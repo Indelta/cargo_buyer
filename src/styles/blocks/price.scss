@@ -120,6 +120,19 @@
     }
   }
 
+  &__input {
+  
+    &.animate {
+      animation-name: example;
+      animation-duration: .7s;
+      @keyframes example {
+        0%   {background-color: transparent;}
+        50%  {background-color: $primary-color;}
+        100% {background-color: transparent;}
+    }
+  }
+  }
+
   &__btn {
     position: relative;
     display: block;

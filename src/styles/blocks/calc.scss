@@ -81,17 +81,13 @@
     }
   }
 
-  input[name="phone"] {
-
-
-
-    
+  input[name="phone"] {    
     &.animate {
       animation-name: example;
       animation-duration: .7s;
       @keyframes example {
         0%   {background-color: transparent;}
-        50%  {background-color: red;}
+        50%  {background-color: $primary-color;}
         100% {background-color: transparent;}
     }
   }
@@ -136,7 +132,7 @@
     }
   }
 
-  &__btn {
+  &__submit {
     display: block;
     position: relative;
     margin: 35px auto 25px;
@@ -148,9 +144,11 @@
   }
 
   &__next {
+    margin: 35px auto 25px;
     display: none;
 
     @include mobile {
+      margin: 19px auto 0;
       display: flex;
       justify-content: center;
       align-items: center;
