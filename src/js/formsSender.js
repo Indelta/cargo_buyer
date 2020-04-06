@@ -41,15 +41,27 @@ export const calcSender = (form) => {
     btn.value = btnVal;
     document.querySelector(".thanks__min").style.display = "none";
     document.querySelector(".calc").classList.add("show");
-    document.querySelector(".thanks__cargo").innerHTML = productType;
-    document.querySelector(".thanks__weight").innerHTML = weight + "кг";
-    document.querySelector(".thanks__country").innerHTML = country;
-    if (finalCost <= 200) {
-      document.querySelector(".thanks__cost").innerHTML = 200 + " $";
-      document.querySelector(".thanks__min").style.display = "block";
-    } else {
-      document.querySelector(".thanks__cost").innerHTML = finalCost + " $";
-    }
+
+    
+  
+    // if (finalCost <= 200) {
+    //   document.querySelector(".thanks__cost").innerHTML = 200 + " $";
+    //   document.querySelector(".thanks__min").style.display = "block";
+    // } else {
+     setTimeout(() => {
+      document.querySelector(".thanks__cargo").innerHTML = productType;
+      setTimeout(() => {
+        document.querySelector(".thanks__weight").innerHTML = weight + "кг";
+        setTimeout(() => {
+          document.querySelector(".thanks__country").innerHTML = country;
+          setTimeout(() => {
+            document.querySelector(".thanks__cost").innerHTML = finalCost + " $";
+          }, 500);
+        }, 500);
+      }, 500);
+     }, 500);
+    // }
+    
     formElem.reset();
     // btn.disabled = false;
     // formElem.reset();
@@ -75,22 +87,22 @@ export const getPrice = (form) => {
       formElem.querySelector('input[name="phone"]').classList.remove("animate");
     }, 500);
   } else {
-    document.querySelector("#open-pdf").click();
-    formElem.reset();
+    $.ajax({
+      processData: false,
+      contentType: false,
+      method: "POST",
+      url: "./send.php",
+      data: data,
+      success: (res) => {
+        document.querySelector("#open-pdf").click();
+        formElem.reset();
+      },
+    });
+
     // if (res === "1") {
     //   document.querySelector("#open-pdf").click();
     // }
   }
-  // todo error phone
 
-  // $.ajax({
-  //   processData: false,
-  //   contentType: false,
-  //   method: "POST",
-  //   url: "./send.php",
-  //   data: data,
-  //   success: (res) => {
 
-  //   },
-  // });
 };

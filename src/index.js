@@ -74,6 +74,9 @@ document.addEventListener(
           spaceBetween: 20,
         },
       },
+      pagination: {
+        el: '.swiper-pagination',
+      },
     });
 
     const selector = document.querySelectorAll("#id-phone");
