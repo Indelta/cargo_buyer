@@ -25,6 +25,11 @@ const products = [
     bigCost: 3
   },
   {
+    category: 'Дорожные сумки',
+    smallCost: 3,
+    bigCost: 3
+  },
+  {
     category: 'БАДы',
     smallCost: 3,
     bigCost: 3
@@ -52,7 +57,7 @@ const products = [
 ];
 
 export default function (category, weight) {
-  const categoryObj = products.filter(product => product.category === category)[0];
+  const categoryObj = products.filter(product => product.category == category)[0];
   const mainCost = weight < 300 ? weight * categoryObj.smallCost : weight * categoryObj.bigCost;
   return mainCost
 }

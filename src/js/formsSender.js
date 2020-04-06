@@ -8,14 +8,13 @@ export const calcSender = (form) => {
   const weight = parseInt(form.find('input[name="weight"]').val(), 10)
     ? parseInt(form.find('input[name="weight"]').val(), 10)
     : 0;
+  console.log('productType', productType)
   const finalCost = calcManager(productType, weight);
   const formElem = document.querySelector(".calc__form");
   const data = new FormData(formElem);
   data.append("finalCost", finalCost);
   const btn = document.querySelector('input[type="submit"]');
   const btnVal = btn.value;
-console.log(inputPhone);
-
   // btn.disabled = true;
   // btn.value = "Отправка...";
   // btn.prop('disabled', true).val('Отправка...');
