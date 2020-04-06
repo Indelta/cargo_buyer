@@ -87,17 +87,17 @@ export const getPrice = (form) => {
       formElem.querySelector('input[name="phone"]').classList.remove("animate");
     }, 500);
   } else {
-    $.ajax({
-      processData: false,
-      contentType: false,
-      method: "POST",
-      url: "./send.php",
-      data: data,
-      success: (res) => {
+    // $.ajax({
+    //   processData: false,
+    //   contentType: false,
+    //   method: "POST",
+    //   url: "./send.php",
+    //   data: data,
+    //   success: (res) => {
         document.querySelector("#open-pdf").click();
         formElem.reset();
-      },
-    });
+    //   },
+    // });
 
     // if (res === "1") {
     //   document.querySelector("#open-pdf").click();
