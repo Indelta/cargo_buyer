@@ -1,6 +1,6 @@
 .calc {
   padding: 44px 0 70px;
-  background: url('../assets/img/jpg/bg_img.jpg') no-repeat;
+  background: url("../assets/img/jpg/bg_img.jpg") no-repeat;
   background-size: cover;
 
   &.show {
@@ -19,7 +19,6 @@
     background-color: white;
     margin-top: 40px;
     box-shadow: 0px 2px 14px 0px rgba(0, 0, 0, 0.5);
-
   }
 
   &__label {
@@ -44,12 +43,11 @@
       flex-direction: column;
       align-items: center;
     }
-
   }
 
   &__top {
     padding: 20px 50px 25px 35px;
-    box-shadow: 0px 11px 17px -13px rgba(0,0,0,0.75);
+    box-shadow: 0px 11px 17px -13px rgba(0, 0, 0, 0.75);
 
     @include tablet-and-mobile {
       padding: 25px;
@@ -60,7 +58,7 @@
   &__bottom {
     padding: 20px 50px 25px 35px;
     display: flex;
-    flex-direction: column;   
+    flex-direction: column;
 
     input {
       height: 50px;
@@ -81,21 +79,32 @@
     }
   }
 
-  input[name="phone"] {    
+  input[name="phone"],
+  input[name="weight"],
+  input[name="name"], 
+  input[name="instagram"] {
     &.animate {
       animation-name: example;
-      animation-duration: .7s;
+      animation-duration: 0.7s;
       @keyframes example {
-        0%   {background-color: transparent;}
-        50%  {background-color: $primary-color;}
-        100% {background-color: transparent;}
+        0% {
+          background-color: transparent;
+          // barder: 2px solid transparent;
+        }
+        50% {
+          background-color: $primary-color;
+          // barder: 2px solid $primary-color;
+        }
+        100% {
+          background-color: transparent;
+          // barder: 2px solid transparent;
+        }
+      }
     }
-  }
-  }
-
+  }  
 
   &__select {
-    font-family: 'Glober';
+    font-family: "Glober";
     font-weight: 400;
     font-size: 14px;
     color: #afafaf;
@@ -114,21 +123,20 @@
 
     option {
       width: 100%;
-      ;
     }
   }
 
   &__text {
     width: 210px;
     margin: 0 auto;
-    font-family: 'Glober';
+    font-family: "Glober";
     font-weight: 400;
     font-size: 12px;
     text-align: center;
     line-height: 20px;
 
     @include mobile {
-      margin: 16px auto 0;      
+      margin: 16px auto 0;
     }
   }
 
@@ -136,8 +144,8 @@
     display: block;
     position: relative;
     margin: 35px auto 25px;
-    
-    @include mobile {      
+
+    @include mobile {
       margin: 19px auto 0;
       order: 1;
     }
@@ -156,8 +164,8 @@
   }
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }

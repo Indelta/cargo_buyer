@@ -4,11 +4,19 @@ export default function calcManager() {
   const formBottom = document.querySelector(".calc__bottom");
   const calcPage = document.querySelector(".calc");
   const mainBtn = document.querySelector(".thanks__back");
-  const thanksPage = document.querySelector(".thanks");
+  const weight = document.querySelector('input[name="weight"]');
+  console.log(weight);
 
   btnNext.addEventListener("click", () => {
-    formTop.style.display = "none";
-    formBottom.style.display = "flex";
+    if (!weight.value) {
+      weight.classList.add("animate");
+      setTimeout(() => {
+        weight.classList.remove("animate");
+      }, 500);
+    } else {
+      formTop.style.display = "none";
+      formBottom.style.display = "flex";
+    }
   });
 
   mainBtn.addEventListener("click", () => {

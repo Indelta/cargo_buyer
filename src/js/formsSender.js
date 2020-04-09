@@ -5,6 +5,8 @@ export const calcSender = (form) => {
   let inputPhone = form.find('input[name="phone"]').val().replace(/\D+/g, "");
   const productType = form.find('select[name="products"]').val();
   const country = form.find('select[name="countries"]').val();
+  const name = form.find('input[name="name"]').val();
+  const instagram = form.find('input[name="instagram"]').val();
   const weight = parseInt(form.find('input[name="weight"]').val(), 10)
     ? parseInt(form.find('input[name="weight"]').val(), 10)
     : 0;
@@ -15,17 +17,32 @@ export const calcSender = (form) => {
   data.append("finalCost", finalCost);
   const btn = document.querySelector('input[type="submit"]');
   const btnVal = btn.value;
-  btn.disabled = true;
-  btn.value = "Отправка...";
+  console.log(name);
 
-  if (!inputPhone || inputPhone.lenght < 12) {
-    btn.value = btnVal;
-    formElem.querySelector('input[name="phone"]').classList.add("animate");
+  function validForm(element) {
+    element.classList.add("animate");
     setTimeout(() => {
-      formElem.querySelector('input[name="phone"]').classList.remove("animate");
+      element.classList.remove("animate");
     }, 500);
-    btn.disabled = false;
+  }
+
+  if (country === 'Италия') {
+    document.querySelector('.thanks__bottom').innerHTML = "*Мы	знаем	среднюю	стоимость	доставки	груза	из	Италии	в	Москву	– 10	евро.	Мы	готовы	сделать	вам	более	выгодное предложение!	Наши	менеджеры	свяжутся	с	вами	в	рабочее	время	(с	10:00	до	18:00	по	МСК)	для	консультации."
   } else {
+    document.querySelector('.thanks__bottom').innerHTML = "*Доставка от склада отправителя до Вильнюса рассчитывается индивидуально в зависимости от параметров груза.Наши менеджеры свяжутся с вами в рабочее время (с 10:00 до 18:00 по МСК) для консультации."
+  }
+
+  if(!weight) {
+    validForm(formElem.querySelector('input[name="weight"]'));    
+  } else if(!name) {
+    validForm(formElem.querySelector('input[name="name"]'));    
+  } else if (!inputPhone || inputPhone.lenght < 12) {
+    validForm(formElem.querySelector('input[name="phone"]'));     
+  } else if (!instagram) {
+    validForm(formElem.querySelector('input[name="instagram"]'));     
+  } else {
+    btn.disabled = true;
+    btn.value = "Отправка...";
     // $.ajax({
     //   processData: false,
     //   contentType: false,
@@ -34,6 +51,7 @@ export const calcSender = (form) => {
     //   data: data,
     //   cache: false,
     //   success: function (res) {
+    //     console.log(res)
         btn.value = btnVal;
         document.querySelector(".thanks__min").style.display = "none";
         document.querySelector(".thanks__subtitle").style.display = "none";
@@ -84,6 +102,7 @@ export const getPrice = (form) => {
     //   url: "./send.php",
     //   data: data,
     //   success: (res) => {
+    //     console.log(res)
         // document.querySelector("#open-pdf").click();
         // formElem.reset();
         // if (res === "1") {

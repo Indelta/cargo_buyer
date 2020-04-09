@@ -2,20 +2,25 @@
 
   $name = isset($_POST['name']) ? $_POST['name'] : '';
   $phone = isset($_POST['phone']) ? preg_replace("/[^0-9]/", "", $_POST['phone']) : 0;
-
-  // ...
+  $products = isset($_POST['products']) ? $_POST['products'] : '';
+  $weight = isset($_POST['weight']) ? $_POST['weight'] : '';
+  $countries = isset($_POST['countries']) ? $_POST['countries'] : '';
+  $instagram = isset($_POST['instagram']) ? $_POST['instagram'] : '';
 
   $mes = '';
   if (!$phone) exit("Error! Phone is a required field");
   else {
     $mes = "<p>Имя: $name</p>";
     $mes .= "<p>Телефон: $phone</p>";
-    // ...
-
+    $mes .= "<p>products: $products</p>";
+    $mes .= "<p>weight: $weight</p>";
+    $mes .= "<p>countries: $countries</p>";
+    $mes .= "<p>instagram: $instagram</p>";
+ 
     $to = "deltaplanirovanie@gmail.com, deltastream.dev@gmail.com, manager.deltaplan@gmail.com";
     $sub = "=?utf-8?B?" . base64_encode("Заявка с сargo-buyer.com") . '?=';
     $headers = "Content-type: text/html; charset=utf-8 \r\n";
-    $headers .= "From: getprice.by/shkaf-kupe\r\n";
+    $headers .= "From: cargo-buyer.ru/\r\n";
     
     mail("$to", "$sub", "$mes", "$headers");
     // sms($_POST['phone'], '375296486172');
