@@ -8,7 +8,8 @@ import { getPrice } from "./js/formsSender";
 import mobileMenu from "./js/mobile-menu";
 import tabManager from "./js/tab-manager";
 import calcManager from "./js/calc-manager";
-import scrollManager from "./js/scroll"
+import scrollManager from "./js/scroll";
+import goal from "./js/goal";
 
 document.addEventListener(
   "DOMContentLoaded",
@@ -17,6 +18,7 @@ document.addEventListener(
     tabManager();
     calcManager();
     scrollManager();
+    goal();
     $("#open-pdf").on("click", () => true);
     const params = new URLSearchParams(window.location.search);
     $('input[name="utm_term"]').val(params.get("utm_term"));
@@ -44,17 +46,9 @@ document.addEventListener(
       once: false, // whether animation should happen only once - while scrolling down
       mirror: false, // whether elements should animate out while scrolling past them
       anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
-    });
-
-    // document.querySelector('.calc__form').addEventListener('submit', (e) => {
-    //   e.preventDefault();
-    //   calcSender($('.calc__form'));
-    // });
-    
-  
+    });  
 
     $(".calc__form").on("submit", function (e) {
-      console.log('click');
       e.preventDefault();
       calcSender($('.calc__form'));
     });

@@ -17,7 +17,6 @@ export const calcSender = (form) => {
   data.append("finalCost", finalCost);
   const btn = document.querySelector('input[type="submit"]');
   const btnVal = btn.value;
-  console.log(name);
 
   function validForm(element) {
     element.classList.add("animate");
@@ -43,15 +42,15 @@ export const calcSender = (form) => {
   } else {
     btn.disabled = true;
     btn.value = "Отправка...";
-    // $.ajax({
-    //   processData: false,
-    //   contentType: false,
-    //   url: "./send.php",
-    //   method: "POST",
-    //   data: data,
-    //   cache: false,
-    //   success: function (res) {
-    //     console.log(res)
+    $.ajax({
+      processData: false,
+      contentType: false,
+      url: "./send.php",
+      method: "POST",
+      data: data,
+      cache: false,
+      success: function (res) {
+        console.log(res)
         btn.value = btnVal;
         document.querySelector(".thanks__min").style.display = "none";
         document.querySelector(".thanks__subtitle").style.display = "none";
@@ -76,12 +75,13 @@ export const calcSender = (form) => {
         }, 500);
         btn.disabled = false;
         formElem.reset();
-        // срабатывание целей Google, Yandex, etc.
-        // ym(45709953, 'reachGoal', 'RaschetFinal');
-        // gtag('event', 'send', {'event_category': 'Btn', 'event_action': 'Click', 'event_label': 'RaschetFinal' });
+        ym(61473721, 'reachGoal', 'EventCalculation');
+        gtag('event', 'send', {'event_category': 'Event', 'event_action': 'Send', 'event_label': 'EventCalculation' });
+        // срабатывание целей Google, Yandex, etc.      
         // показываем thankyou page
-    //   },
-    // });
+
+      },
+    });
   }
 };
 
@@ -95,21 +95,24 @@ export const getPrice = (form) => {
       formElem.querySelector('input[name="phone"]').classList.remove("animate");
     }, 500);
   } else {
-    // $.ajax({
-    //   processData: false,
-    //   contentType: false,
-    //   method: "POST",
-    //   url: "./send.php",
-    //   data: data,
-    //   success: (res) => {
-    //     console.log(res)
-        // document.querySelector("#open-pdf").click();
-        // formElem.reset();
-        // if (res === "1") {
+    $.ajax({
+      processData: false,
+      contentType: false,
+      method: "POST",
+      url: "./send.php",
+      data: data,
+      success: (res) => {
+        console.log(res)
+        document.querySelector("#open-pdf").click();
+        formElem.reset();
+        if (res === "1") {
           document.querySelector("#open-pdf").click();
           formElem.reset();
-        // }
-    //   },
-    // });
+        }
+
+        ym(61473721, 'reachGoal', 'EventPrice');
+        gtag('event', 'send', {'event_category': 'Event', 'event_action': 'Send', 'event_label': 'EventPrice' });
+      },
+    });
   }
 };

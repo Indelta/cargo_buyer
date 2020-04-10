@@ -4,8 +4,7 @@ export default function calcManager() {
   const formBottom = document.querySelector(".calc__bottom");
   const calcPage = document.querySelector(".calc");
   const mainBtn = document.querySelector(".thanks__back");
-  const weight = document.querySelector('input[name="weight"]');
-  console.log(weight);
+  const weight = document.querySelector('input[name="weight"]'); 
 
   btnNext.addEventListener("click", () => {
     if (!weight.value) {
