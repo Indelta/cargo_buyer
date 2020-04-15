@@ -85,7 +85,7 @@
     color: #891B17;
 
     @include mobile {
-      display: inline-block;
+      align-self: center;
     }
 
     &:not(:first-child) {
