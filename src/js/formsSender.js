@@ -37,8 +37,6 @@ export const calcSender = (form) => {
     validForm(formElem.querySelector('input[name="name"]'));    
   } else if (!inputPhone || inputPhone.lenght < 12) {
     validForm(formElem.querySelector('input[name="phone"]'));     
-  } else if (!instagram) {
-    validForm(formElem.querySelector('input[name="instagram"]'));     
   } else {
     btn.disabled = true;
     btn.value = "Отправка...";
@@ -102,11 +100,10 @@ export const getPrice = (form) => {
       url: "./send.php",
       data: data,
       success: (res) => {
-        console.log(res)
-        document.querySelector("#open-pdf").click();
-        formElem.reset();
-        if (res === "1") {
-          document.querySelector("#open-pdf").click();
+
+
+        if (res == "1") {
+          document.querySelector("#open-pdf").click(function () {})
           formElem.reset();
         }
 

@@ -3,6 +3,12 @@
   background: url("../assets/img/jpg/bg_img.jpg") no-repeat;
   background-size: cover;
 
+  @include tablet-and-mobile {
+    background: url("../assets/img/jpg/bg_img.jpg") no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+  }
+
   &.show {
     .calc {
       &__inner {
