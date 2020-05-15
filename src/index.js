@@ -3,13 +3,16 @@ import "./styles/main.scss";
 import Swiper from "swiper";
 import AOS from "aos";
 import Inputmask from "inputmask";
+import  Iti  from "intl-tel-input";
 import { calcSender } from "./js/formsSender";
 import { getPrice } from "./js/formsSender";
+import { phoneBack } from "./js/formsSender";
 import mobileMenu from "./js/mobile-menu";
 import tabManager from "./js/tab-manager";
 import calcManager from "./js/calc-manager";
 import scrollManager from "./js/scroll";
 import goal from "./js/goal";
+import utils from "./js/utils"
 
 document.addEventListener(
   "DOMContentLoaded",
@@ -53,6 +56,11 @@ document.addEventListener(
       calcSender($('.calc__form'));
     });
 
+    $(".modal__inner").on("submit", function (e) {
+      e.preventDefault();
+      phoneBack($('.modal__inner'));
+    });
+
     $(".price__form").on("submit", function (e) {
       e.preventDefault();
       getPrice($(this));
@@ -73,10 +81,27 @@ document.addEventListener(
       },
     });
 
-    const selector = document.querySelectorAll("#id-phone");
 
-    const im = new Inputmask({"mask": "+9 (999) 999-99-99"});
-    im.mask(selector);
+    const selector = document.querySelector("#id-phone-inter");
+
+      var iti = new Iti(selector, {
+        // initialCountry: "auto",
+        preferredCountries: ['ru', 'by'],
+        geoIpLookup: function(success, failure) {
+          $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+            var countryCode = (resp && resp.country) ? resp.country : "";
+            success(countryCode);
+          });
+        },
+        utilsScript: utils,
+      });
+  
+      iti._init();
+  
+
+    const inputs = document.querySelectorAll("#id-phone");
+    const im = new Inputmask({"mask": "+9 (999) 999-99-99[9]"});
+    im.mask(inputs);
   },
   false
 );

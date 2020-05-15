@@ -131,6 +131,17 @@
         }
     }
 
+    &__middle,
+    &__top {
+        font-family: 'Glober';
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        padding: 20px 20px;
+        border-bottom: 1px solid black;
+        text-align: center;
+    }
+
     &__bottom {
         margin-top: 19px;
         font-family: 'Glober';

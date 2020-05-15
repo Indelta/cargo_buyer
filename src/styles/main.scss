@@ -2,6 +2,7 @@
 @import "~reset-css";
 @import "~swiper/css/swiper.min.css";
 @import "~aos/dist/aos.css";
+@import "~intl-tel-input/build/css/intlTelinput.min.css";
 
 @import './helpers/variables';
 @import './helpers/mixins';
@@ -20,3 +21,10 @@
 @import './blocks/contacts';
 @import './blocks/footer';
 @import './blocks/thanks';
+@import './blocks/price-list';
+
+.iti__flag {background-image: url("../assets/img/png/flags.png");}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {background-image: url("../assets/img/png/flags@2x.png");}
+}

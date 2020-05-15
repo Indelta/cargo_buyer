@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cargo-buyer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -47,8 +48,15 @@
                         </div>
                     </div>
                     <div class="header__center">
-                        <a target="_blank" href='https://www.instagram.com/logistics_belcargo/?hl=ru' class="header__center-text">Instagram Direct</a>
-                        <img src="./assets/img/jpg/insta_red_logo.jpg" alt="" class="header__center-img">
+                        <div class="header__callback">
+                            <p class="header__center-text phone">Заказать звонок</p>
+                            <img src="./assets/img/svg/phone.svg" alt="" class="header__center-img">
+                        </div>
+                        <div class="header__instagram">
+                            <a target="_blank" href='https://www.instagram.com/cargo_buyer/?hl=ru' class="header__center-text">Instagram Direct</a>
+                            <img src="./assets/img/jpg/insta_red_logo.jpg" alt="" class="header__center-img">
+                        </div>
+
                     </div>
                     <div class="header__right">
                         <a href="tel:+74954781860" class="header__phone">+7 495 478 18 60</a>
@@ -73,7 +81,7 @@
                     </div>
                     <ul class="header__list" >
                         <li class="header__item">Стоимость 5 $/кг, доставим от Вильнюса до Москвы за 3-5 дней</li>
-                        <li class="header__item">Собственный склад консолидации в Вильнюсе</li>
+                        <li class="header__item">Собственные склады консолидации в Вильнюсе, Милане, Штуттгарте</li>
                         <li class="header__item">Заберем груз от адреса отправителя</li>
                         <li class="header__item">Несем финансовые гарантии
                             за сохранность груза</li>
@@ -90,7 +98,7 @@
                         <div class="format__left active">
                             <ul class="format__left-list">
                                 <li class="format__left-item">Вы сами организуете доставку груза до нашего
-                                    склада в Вильнюсе</li>
+                                    склада в Вильнюсе, Италии (район Милана) или в Германии (район Штуттгарта)</li>
                                 <li class="format__left-item">На складе мы принимаем груз, фотографируем и
                                     взвешиваем его</li>
                                 <li class="format__left-item">Менеджер связывается с вами для уточнения и
@@ -132,7 +140,20 @@
                         </div>
                     </div>
                 </div>
-
+                <div class="header__modal modal">                    
+                        <form class="modal__inner" >
+                            <div class="modal__close">&#10006;</div>
+                            <h3 class="modal__title title">Заказать звонок</h3>
+                            <p class="modal__subtitle">Оставьте ваш номер телефона и специалист свяжется с вами в рабочее время с 10 до 18 в будние дни!</p>
+                            <label for="" class="modal__label form__label"> Введите ваше имя:
+                                <input type="text" class="modal__input form__input" name="name" >
+                            </label>
+                            <label for="" class="modal__label form__label"> Введите ваш номер телефона:
+                                <input type="text" class="modal__input form__input" name="phone" id='id-phone-inter'>
+                            </label>
+                            <input type='submit' class="btn modal__btn" value='Заказать звонок'/>
+                        </form>                    
+                </div>
             </div>
     </header>
     <main class="main">
@@ -255,7 +276,7 @@
                                 </div>
                             </div>
                             <div class="calc__submit">
-                                <input class="calc__btn btn" type="submit" value='рассчитать стоимость'>
+                                <input class="calc__btn btn submit" type="submit" value='рассчитать стоимость'>
                                 <img src="./assets/img/png/Layer 131 copy 2@1X.png" alt="img" class="header__btn-img">
                             </div>                           
                            
@@ -264,7 +285,6 @@
                                 перенаправлены на страницу расчета
                             </p>
                         </div>                  
-
                         <input type="hidden" name="type" value="Калькулятор" />
                         <input type="hidden" name="utm_term" value="" />
                         <input type="hidden" name="utm_source" value="" />
@@ -304,6 +324,8 @@
                                 <li class="thanks__cell">Таможенное оформление</li>
                                 <li class="thanks__cell">Финансовая гарантия</li>
                             </ul>
+                            <p class="thanks__top">Стоимость доставки от складов в Италии (район Милана) и Германии (район Штуттгарта) до конечного склада консолидации в Литве (Вильнюс) – 1$/кг</p>
+                            <p class="thanks__middle">Доставка от склада отправителя до Вильнюса рассчитывается индивидуально</p>
                             <p class="thanks__bottom"></p>
                         </div>
                     </div>
@@ -423,8 +445,8 @@
                         <li class="price__item">
                             <img src="./assets/img/png/7icon.png" alt="" class="price__img">
                             <p class="price__desc">
-                                Минимальный<br />
-                                заказ 200 $
+                                Минимальные<br />
+                                тарифы от 5 $/кг
                             </p>
                         </li>
                         <li class="price__item">
@@ -532,7 +554,7 @@
                                 <a href='mailto:info@cargo-buyer.ru' class="contacts__link contacts__mail">info@cargo-buyer.ru</a>
                             </li>
                             <li class="contacts__item">
-                                <a target="_blank" href='https://www.instagram.com/logistics_belcargo/?hl=ru' class="contacts__link contacts__instagram">instagram</a>
+                                <a target="_blank" href='https://www.instagram.com/cargo_buyer/?hl=ru' class="contacts__link contacts__instagram">instagram</a>
                             </li>
                         </ul>
                     </div>
@@ -561,6 +583,67 @@
 
     </footer>
     <a href="./assets/price/Cargo_bayer_price.pdf" id="open-pdf"></a>
+    <section class="price-list">
+        <div class="container">
+                <div class="price-list__inner">
+                    <p class="price-list__title title">Прайс-лист на доставку грузов</p>
+                    <div class="price-list__img">
+                        <img src="./assets/img/png/close.png" alt="" class="price-list__close">
+                    </div>
+                    <ul class="price-list__items">
+                        <li class="price-list__item">Вильнюс-Москва
+                            <p class="price-list__text"><span>До 20 кг</span> – 8$ за кг (одежда, обувь, сумки, ремни)</p>
+                            <p class="price-list__text"><span>От 20 кг до 300 кг</span> – 6$ за кг (одежда, обувь, сумки, ремни)</p>
+                            <p class="price-list__text"><span>От 300 кг</span> – 5$ за кг (одежда, обувь, сумки, ремни)</p>
+                            <p class="price-list__text-red"><span>Только обувь:</span> до 20 кг - 7$ за кг, от 20 кг до 300 кг - 5$ за кг, от 300 кг - 4$&nbsp;за&nbsp;кг</p>
+                            <div class="price-list__top">
+                                <ul class="price-list__list">
+                                    <li class="price-list__cell">Чемоданы и дорожные сумки</li>
+                                    <li class="price-list__cell">БАДы</li>
+                                    <li class="price-list__cell">Рыболовные снасти</li>
+                                    <li class="price-list__cell">Запчасти</li>
+                                </ul>
+                                <div class="price-list__right">
+                                    <span class="price-list__text">до 20 кг – 5 $ за кг</span>
+                                    <span class="price-list__text">от 20 кг - 3 $ за кг</span>
+                                </div>
+                            </div>
+                            <div class="price-list__middle">
+                                <ul class="price-list__list">
+                                    <li class="price-list__cell">Косметика</li>
+                                    <li class="price-list__cell">Домашний текстиль</li>  
+                                </ul> 
+                                <div class="price-list__right">
+                                    <span class="price-list__text">до 20 кг – 4 $ за кг</span>
+                                    <span class="price-list__text">от 20 кг - 2 $ за кг</span>
+                                </div>
+                            </div>
+                            <div class="price-list__bottom">
+                                <p class="price-list__text price-list__left">Доставка от складов консолидации в Италии (район Милана) и Германии (район Штуттгарта) до конечного склада консолидации в Литве (Вильнюс)
+                                </p>
+                                <div class="price-list__right">
+                                    <span class="price-list__text">1$ за кг</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="price-list__item">Отправка грузов по адресам
+                            <p class="price-list__text"><span>В грузе до 3 адресов</span> – бесплатно</p>
+                            <p class="price-list__text"><span>От 4 адреса</span> – за каждый адреc - 1000&nbsp;руб.</p>
+                        </li>
+                        <li class="price-list__item">Отправка грузов по Москве
+                            <p class="price-list__text"><span>До - 20 кг (до 0,2 м3)</span> - 1200&nbsp;руб.</p>
+                            <p class="price-list__text"><span>От 20 до 100 кг (до 0,5 м3)</span> – 2200&nbsp;руб.</p>
+                            <p class="price-list__text"><span>От 100 до 600 кг (до 2 м3)</span> – 2700&nbsp;руб.</p>
+                            <p class="price-list__text"><span>От 600 до 1000 кг (до 5 м3)</span> – 3500&nbsp;руб.</p>                           
+                        </li>
+                        <li class="price-list__item">Стоимость поездки отдельной машины  в пределах МКАД
+                            <p class="price-list__text"><span>Мерседес Спринтер (Объем 15 м3, грузоподъемность 1,5 тонн)</span> - 4500&nbsp;руб.</p>
+                            <p class="price-list__text"><span>МАН (Объем 30 м3, грузоподъемность 7 тонн)</span> - 14 000&nbsp;руб.</p>
+                        </li>
+                    </ul>          
+                </div>            
+        </div>
+    </section>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161993581-1"></script>
 <script>

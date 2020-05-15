@@ -107,7 +107,6 @@
   &__center {
     display: flex;
     @include transition;
-    margin-left: 110px;
 
     &:hover {
       opacity: .8;
@@ -116,20 +115,35 @@
 
     @include mobile {
       position: absolute;
-      margin-left: 0;
-      left: 50%;
+      justify-content: space-around;
       top: 190px;
-      transform: translateX(-50%);
+      left: 0;
+      right: 0;
+
     }
+  }
+
+  &__callback {
+    margin-right: 50px;
+
+    @include mobile {
+      margin-right: 0;
+    }
+  }
+
+  &__callback,
+  &__instagram {
+    display: flex;
   }
 
   &__center-text {
     display: block;
     position: relative;
     font-family: 'Akrobat';
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 100;  
-    margin-right: 5px;  
+    margin-right: 5px; 
+    cursor: pointer; 
 
     &:after {
       content: '';
@@ -650,4 +664,63 @@
   @include mobile {
     font-size: 26px;
   }
+}
+
+.modal {
+display: none;
+
+  &.active {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.51);
+    z-index: 1;
+  }
+
+  &__inner {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 70px;
+
+    @include mobile {
+      padding: 20px;
+    }
+  }
+
+  &__subtitle {
+    font-family: 'Glober';
+    font-weight: 300;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 11px;
+    line-height: 24px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__btn {
+    display: block;
+    margin: 20px auto 0;
+  }
+
 }

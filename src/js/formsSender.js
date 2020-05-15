@@ -15,7 +15,7 @@ export const calcSender = (form) => {
   const formElem = document.querySelector(".calc__form");
   const data = new FormData(formElem);
   data.append("finalCost", finalCost);
-  const btn = document.querySelector('input[type="submit"]');
+  const btn = document.querySelector('.submit');
   const btnVal = btn.value;
 
   function validForm(element) {
@@ -24,18 +24,20 @@ export const calcSender = (form) => {
       element.classList.remove("animate");
     }, 500);
   }
+  document.querySelector(".thanks__middle").style.display = "none";
 
   if (country === 'Италия') {
-    document.querySelector('.thanks__bottom').innerHTML = "*Мы	знаем	среднюю	стоимость	доставки	груза	из	Италии	в	Москву	– 10	евро.	Мы	готовы	сделать	вам	более	выгодное предложение!	Наши	менеджеры	свяжутся	с	вами	в	рабочее	время	(с	10:00	до	18:00	по	МСК)	для	консультации."
+    document.querySelector('.thanks__bottom').innerHTML = "*Мы	знаем	среднюю	стоимость	доставки	груза	из	Италии	в	Москву	– 10	евро.	Мы	готовы	сделать	вам	более	выгодное предложение!	Наши	менеджеры	свяжутся	с	вами	в	рабочее	время	(с	10:00	до	18:00	по	МСК)	для	консультации.";
+    document.querySelector(".thanks__middle").style.display = "block";
   } else {
     document.querySelector('.thanks__bottom').innerHTML = "*Доставка от склада отправителя до Вильнюса рассчитывается индивидуально в зависимости от параметров груза. Наши менеджеры свяжутся с вами в рабочее время (с 10:00 до 18:00 по МСК) для консультации."
   }
 
   if(!weight) {
     validForm(formElem.querySelector('input[name="weight"]'));    
-  } else if(!name) {
+  } else if(!name) {    
     validForm(formElem.querySelector('input[name="name"]'));    
-  } else if (!inputPhone || inputPhone.lenght < 12) {
+  } else if (!inputPhone || inputPhone.length < 11) {
     validForm(formElem.querySelector('input[name="phone"]'));     
   } else {
     btn.disabled = true;
@@ -48,16 +50,15 @@ export const calcSender = (form) => {
       data: data,
       cache: false,
       success: function (res) {
-        console.log(res)
         btn.value = btnVal;
         document.querySelector(".thanks__min").style.display = "none";
         document.querySelector(".thanks__subtitle").style.display = "none";
         document.querySelector(".calc").classList.add("show");
 
-        if (finalCost <= 200) {
-          document.querySelector(".thanks__subtitle").style.display = "block";
-          document.querySelector(".thanks__min").style.display = "block";
-        } 
+        // if (finalCost <= 200) {
+        //   document.querySelector(".thanks__subtitle").style.display = "block";
+        //   document.querySelector(".thanks__min").style.display = "block";
+        // } 
         setTimeout(() => {
           document.querySelector(".thanks__cargo").innerHTML = productType;
           setTimeout(() => {
@@ -87,7 +88,7 @@ export const getPrice = (form) => {
   let inputPhone = form.find('input[name="phone"]').val().replace(/\D+/g, "");
   const formElem = document.querySelector(".price__form");
   const data = new FormData(formElem);
-  if (!inputPhone || inputPhone.lenght < 12) {
+  if (!inputPhone || inputPhone.length < 11) {
     formElem.querySelector('input[name="phone"]').classList.add("animate");
     setTimeout(() => {
       formElem.querySelector('input[name="phone"]').classList.remove("animate");
@@ -100,15 +101,51 @@ export const getPrice = (form) => {
       url: "./send.php",
       data: data,
       success: (res) => {
-
-
         if (res == "1") {
-          document.querySelector("#open-pdf").click(function () {})
+          document.querySelector(".price-list").classList.add('active');
+          document.querySelector("body").classList.add('active');
           formElem.reset();
         }
 
         ym(61473721, 'reachGoal', 'EventPrice');
         gtag('event', 'send', {'event_category': 'Event', 'event_action': 'Send', 'event_label': 'EventPrice' });
+      },
+    });
+  }
+};
+
+export const phoneBack = (form) => {
+  let inputPhone = form.find('input[name="phone"]').val().replace(/\D+/g, "");
+  const formElem = document.querySelector(".modal__inner");
+  const data = new FormData(formElem);
+  const btn = document.querySelector('.modal__btn');
+  const btnVal = btn.value;
+
+  if (!inputPhone || inputPhone.length < 11) {
+    formElem.querySelector('input[name="phone"]').classList.add("animate");
+    setTimeout(() => {
+      formElem.querySelector('input[name="phone"]').classList.remove("animate");
+    }, 500);
+  } else {
+    btn.disabled = true;
+    btn.value = "Отправка...";
+    $.ajax({
+      processData: false,
+      contentType: false,
+      method: "POST",
+      url: "./send.php",
+      data: data,
+      success: (res) => {
+        btn.disabled = false;
+        btn.value = btnVal;
+        formElem.reset();
+        document.querySelector('.modal__subtitle').innerHTML = "Спасибо! Оператор скоро свяжется с вами";
+        setTimeout(() => {          
+          document.querySelector('.modal').classList.remove('active');
+          document.querySelector('body').classList.remove('active');
+        }, 4000);
+        ym(61473721,'reachGoal','EventCall')
+        gtag('event', 'send', {'event_category': 'Event', 'event_action': 'Send', 'event_label': 'EventCall' });
       },
     });
   }
