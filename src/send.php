@@ -6,6 +6,7 @@
   $weight = isset($_POST['weight']) ? $_POST['weight'] : '';
   $countries = isset($_POST['countries']) ? $_POST['countries'] : '';
   $instagram = isset($_POST['instagram']) ? $_POST['instagram'] : '';
+  $whatsApp = isset($_POST['whatsApp']) ? $_POST['whatsApp'] : '';
 
   $mes = '';
   if (!$phone) exit("Error! Phone is a required field");
@@ -16,6 +17,7 @@
     $mes .= "<p>weight: $weight</p>";
     $mes .= "<p>countries: $countries</p>";
     $mes .= "<p>instagram: $instagram</p>";
+    $mes .= "<p>whatsApp: $whatsApp</p>";
  
     $to = "deltaplanirovanie@gmail.com, deltastream.dev@gmail.com, manager.deltaplan@gmail.com";
     $sub = "=?utf-8?B?" . base64_encode("Заявка с сargo-buyer.com") . '?=';

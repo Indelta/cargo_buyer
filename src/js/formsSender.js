@@ -17,6 +17,7 @@ export const calcSender = (form) => {
   data.append("finalCost", finalCost);
   const btn = document.querySelector('.submit');
   const btnVal = btn.value;
+  console.log('datacalc', data);
 
   function validForm(element) {
     element.classList.add("animate");
@@ -115,9 +116,19 @@ export const getPrice = (form) => {
 };
 
 export const phoneBack = (form) => {
-  let inputPhone = form.find('input[name="phone"]').val().replace(/\D+/g, "");
   const formElem = document.querySelector(".modal__inner");
+  let inputPhone = form.find('input[name="phone"]').val().replace(/\D+/g, "");
+  let inputCheckbox = document.querySelector('input[name="whatsApp"]');
+  let whatsApp
+  
+  if (inputCheckbox.checked === true) {
+    whatsApp = 'Можно связаться по WhatsApp'
+  } else {
+    whatsApp = 'Нельзя связаться по WhatsApp'
+  }
+
   const data = new FormData(formElem);
+  data.append("whatsApp", whatsApp);
   const btn = document.querySelector('.modal__btn');
   const btnVal = btn.value;
 

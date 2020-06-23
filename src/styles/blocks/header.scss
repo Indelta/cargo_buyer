@@ -682,6 +682,10 @@ display: none;
     z-index: 1;
   }
 
+  &__input {
+    margin-top: 0;
+  }
+
   &__inner {
     position: relative;
     max-width: 600px;
@@ -716,11 +720,60 @@ display: none;
     display: flex;
     flex-direction: column;
     align-items: center;
+    line-height: 130%;
   }
 
   &__btn {
+    max-width: 244px;
+    width: 100%;
     display: block;
     margin: 20px auto 0;
   }
 
+  &__checkbox {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Glober';
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+
+    input {
+      margin-right: 10px;
+      background-color: red;
+    }
+  }
+
+  &__logo {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+  }
+
+  &__checkbox input {
+    display: none;/* <--скрываем дефолтный чекбокс */
+  }
+  &__checkbox span {/* <-- стилизируем новый */
+    height: 12px;
+    width: 12px;
+    border: 1px solid gray;
+    display: inline-block;
+    position: relative;
+    background-color:#FFF;
+    border-radius:2px;
+    padding:3px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+
+  [type=checkbox]:checked + span:before {/* <-- ставим иконку, когда чекбокс включен  */
+    content: '\2714';
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size:13px;
+    color:#ff004e;
+  }
 }
