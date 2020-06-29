@@ -3,7 +3,7 @@ import "./styles/main.scss";
 import Swiper from "swiper";
 import AOS from "aos";
 import Inputmask from "inputmask";
-import  Iti  from "intl-tel-input";
+import Iti from "intl-tel-input";
 import { calcSender } from "./js/formsSender";
 import { getPrice } from "./js/formsSender";
 import { phoneBack } from "./js/formsSender";
@@ -12,7 +12,7 @@ import tabManager from "./js/tab-manager";
 import calcManager from "./js/calc-manager";
 import scrollManager from "./js/scroll";
 import goal from "./js/goal";
-import utils from "./js/utils"
+import utils from "./js/utils";
 
 document.addEventListener(
   "DOMContentLoaded",
@@ -49,16 +49,16 @@ document.addEventListener(
       once: false, // whether animation should happen only once - while scrolling down
       mirror: false, // whether elements should animate out while scrolling past them
       anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
-    });  
+    });
 
     $(".calc__form").on("submit", function (e) {
       e.preventDefault();
-      calcSender($('.calc__form'));
+      calcSender($(".calc__form"));
     });
 
     $(".modal__inner").on("submit", function (e) {
       e.preventDefault();
-      phoneBack($('.modal__inner'));
+      phoneBack($(".modal__inner"));
     });
 
     $(".price__form").on("submit", function (e) {
@@ -77,31 +77,63 @@ document.addEventListener(
         },
       },
       pagination: {
-        el: '.swiper-pagination',
+        el: ".swiper-pagination",
       },
     });
 
+    const input = document.querySelector("#id-phone-inter");
+    //       errorMsg = document.querySelector("#error-msg"),
+    //       validMsg = document.querySelector("#valid-msg");
 
-    const selector = document.querySelector("#id-phone-inter");
+    // var errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
 
-      var iti = new Iti(selector, {
-        // initialCountry: "auto",
-        preferredCountries: ['ru', 'by'],
-        geoIpLookup: function(success, failure) {
-          $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-            var countryCode = (resp && resp.country) ? resp.country : "";
-            success(countryCode);
-          });
-        },
-        utilsScript: utils,
-      });
-  
-      iti._init();
-  
+    var iti = new Iti(input, {
+      // initialCountry: "ru",
+      preferredCountries: ["ru", "by"],
+      allowExtensions: true,
+      autoFormat: false,
+      autoHideDialCode: false,
+      autoPlaceholder: false,
+      defaultCountry: "auto",
+      ipinfoToken: "yolo",
+      nationalMode: false,
+      numberType: "MOBILE",
+      preventInvalidNumbers: true,
+      utilsScript: utils,
+    });
 
-    // const inputs = document.querySelectorAll("#id-phone");
-    // const im = new Inputmask({"mask": "+9 (999) 999-99-99[9]"});
-    // im.mask(inputs);
+    iti._init();
+
+//     var reset = function() {
+//       input.classList.remove("error");
+//       errorMsg.innerHTML = "";
+//       errorMsg.classList.add("hide");
+//       validMsg.classList.add("hide");
+//     };
+
+//     // on blur: validate
+// input.addEventListener('blur', function() {
+//   reset();
+//   if (input.value.trim()) {
+//     if (iti.isValidNumber()) {
+//       validMsg.classList.remove("hide");
+//     } else {
+//       input.classList.add("error");
+//       var errorCode = iti.getValidationError();
+//       errorMsg.innerHTML = errorMap[errorCode];
+//       errorMsg.classList.remove("hide");
+//     }
+//   }
+// });
+
+// // on keyup / change flag: reset
+// input.addEventListener('change', reset);
+// input.addEventListener('keyup', reset);
+
+
+    const inputs = document.querySelectorAll("#id-phone");
+    const im = new Inputmask({ mask: "+9 (999) 999-99-99[9]" });
+    im.mask(inputs);
   },
   false
 );
