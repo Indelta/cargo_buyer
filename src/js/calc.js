@@ -65,22 +65,38 @@ const products = [
     mediumCost: 2,
     bigCost: 2
   },
+  {
+    category: 'Бижутерия',
+    smallCost: 15,
+    mediumCost: 12,    
+  },
 ];
 
 export default function (category, weight) {
   const categoryObj = products.filter(product => product.category == category)[0];
   let mainCost = 0;
 
-  if (weight > 0 && weight < 20) {
-    mainCost = weight * categoryObj.smallCost
+  if (categoryObj === 'Бижутерия') {
+    if (weight > 0 && weight < 15) {
+      mainCost = weight * categoryObj.smallCost
+    }
+  
+    if ( weight >= 15) {
+      mainCost = weight * categoryObj.mediumCost
+    }
+  } else {
+    if (weight > 0 && weight < 20) {
+      mainCost = weight * categoryObj.smallCost
+    }
+  
+    if ( weight >= 20 && weight < 300 ) {
+      mainCost = weight * categoryObj.mediumCost
+    }
+  
+    if ( weight >= 300 ) {
+      mainCost = weight * categoryObj.bigCost
+    }
   }
 
-  if ( weight >= 20 && weight < 300 ) {
-    mainCost = weight * categoryObj.mediumCost
-  }
-
-  if ( weight >= 300 ) {
-    mainCost = weight * categoryObj.bigCost
-  }
   return mainCost
 }

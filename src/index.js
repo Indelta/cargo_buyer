@@ -99,9 +99,9 @@ document.addEventListener(
       iti._init();
   
 
-    const inputs = document.querySelectorAll("#id-phone");
-    const im = new Inputmask({"mask": "+9 (999) 999-99-99[9]"});
-    im.mask(inputs);
+    // const inputs = document.querySelectorAll("#id-phone");
+    // const im = new Inputmask({"mask": "+9 (999) 999-99-99[9]"});
+    // im.mask(inputs);
   },
   false
 );

@@ -37,7 +37,7 @@ export const calcSender = (form) => {
     validForm(formElem.querySelector('input[name="weight"]'));    
   } else if(!name) {    
     validForm(formElem.querySelector('input[name="name"]'));    
-  } else if (!inputPhone || inputPhone.length < 11) {
+  } else if (!inputPhone || inputPhone.length < 7) {
     validForm(formElem.querySelector('input[name="phone"]'));     
   } else {
     btn.disabled = true;
@@ -88,7 +88,7 @@ export const getPrice = (form) => {
   let inputPhone = form.find('input[name="phone"]').val().replace(/\D+/g, "");
   const formElem = document.querySelector(".price__form");
   const data = new FormData(formElem);
-  if (!inputPhone || inputPhone.length < 11) {
+  if (!inputPhone || inputPhone.length < 7) {
     formElem.querySelector('input[name="phone"]').classList.add("animate");
     setTimeout(() => {
       formElem.querySelector('input[name="phone"]').classList.remove("animate");
@@ -121,7 +121,7 @@ export const phoneBack = (form) => {
   const btn = document.querySelector('.modal__btn');
   const btnVal = btn.value;
 
-  if (!inputPhone || inputPhone.length < 11) {
+  if (!inputPhone || inputPhone.length < 7) {
     formElem.querySelector('input[name="phone"]').classList.add("animate");
     setTimeout(() => {
       formElem.querySelector('input[name="phone"]').classList.remove("animate");
@@ -137,9 +137,8 @@ export const phoneBack = (form) => {
       data: data,
       success: (res) => {
         btn.disabled = false;
-        btn.value = btnVal;
+        btn.value = 'Заявка принята!';
         formElem.reset();
-        document.querySelector('.modal__subtitle').innerHTML = "Спасибо! Оператор скоро свяжется с вами";
         setTimeout(() => {          
           document.querySelector('.modal').classList.remove('active');
           document.querySelector('body').classList.remove('active');
