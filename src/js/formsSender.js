@@ -119,6 +119,8 @@ export const phoneBack = (form) => {
   const formElem = document.querySelector(".modal__inner");
   let inputPhone = form.find('input[name="phone"]').val().replace(/\D+/g, "");
   let inputCheckbox = document.querySelector('input[name="whatsApp"]');
+  let inputEmail = document.querySelector('input[name="email"]');
+  console.log(inputEmail.value);
   let whatsApp
   
   if (inputCheckbox.checked === true) {
@@ -132,12 +134,17 @@ export const phoneBack = (form) => {
   const btn = document.querySelector('.modal__btn');
   const btnVal = btn.value;
 
-  if (!inputPhone || inputPhone.length < 7) {
+  if (inputEmail.value === '') {
+    formElem.querySelector('input[name="email"]').classList.add("animate");
+    setTimeout(() => {
+      formElem.querySelector('input[name="email"]').classList.remove("animate");
+    }, 500);
+  } else if (!inputPhone || inputPhone.length < 7) {
     formElem.querySelector('input[name="phone"]').classList.add("animate");
     setTimeout(() => {
       formElem.querySelector('input[name="phone"]').classList.remove("animate");
     }, 500);
-  } else {
+  } else  {
     btn.disabled = true;
     btn.value = "Отправка...";
     $.ajax({
