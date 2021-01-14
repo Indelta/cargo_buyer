@@ -81,59 +81,30 @@ document.addEventListener(
       },
     });
 
-    const input = document.querySelector("#id-phone-inter");
-    //       errorMsg = document.querySelector("#error-msg"),
-    //       validMsg = document.querySelector("#valid-msg");
+    const inputs= document.querySelectorAll("#id-phone");
 
-    // var errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
-
-    var iti = new Iti(input, {
-      // initialCountry: "ru",
-      preferredCountries: ["ru", "by"],
-      allowExtensions: true,
-      autoFormat: false,
-      autoHideDialCode: false,
-      autoPlaceholder: false,
-      defaultCountry: "auto",
-      ipinfoToken: "yolo",
-      nationalMode: false,
-      numberType: "MOBILE",
-      preventInvalidNumbers: true,
-      utilsScript: utils,
-    });
-
-    iti._init();
-
-//     var reset = function() {
-//       input.classList.remove("error");
-//       errorMsg.innerHTML = "";
-//       errorMsg.classList.add("hide");
-//       validMsg.classList.add("hide");
-//     };
-
-//     // on blur: validate
-// input.addEventListener('blur', function() {
-//   reset();
-//   if (input.value.trim()) {
-//     if (iti.isValidNumber()) {
-//       validMsg.classList.remove("hide");
-//     } else {
-//       input.classList.add("error");
-//       var errorCode = iti.getValidationError();
-//       errorMsg.innerHTML = errorMap[errorCode];
-//       errorMsg.classList.remove("hide");
-//     }
-//   }
-// });
-
-// // on keyup / change flag: reset
-// input.addEventListener('change', reset);
-// input.addEventListener('keyup', reset);
+    inputs.forEach((element) => {
+      var iti = new Iti(element, {
+        preferredCountries: ["ru", "by"],
+        allowExtensions: true,
+        autoFormat: false,
+        autoHideDialCode: false,
+        autoPlaceholder: false,
+        defaultCountry: "auto",
+        ipinfoToken: "yolo",
+        nationalMode: false,
+        numberType: "MOBILE",
+        preventInvalidNumbers: true,
+        utilsScript: utils,
+      });  
+      iti._init();
+    })
 
 
-    const inputs = document.querySelectorAll("#id-phone");
-    const im = new Inputmask({ mask: "+9 (999) 999-99-99[9]" });
-    im.mask(inputs);
+
+    // const inputs = document.querySelectorAll("#id-phone");
+    // const im = new Inputmask({ mask: "+9 (999) 999-99-99[9]" });
+    // im.mask(inputs);
   },
   false
 );

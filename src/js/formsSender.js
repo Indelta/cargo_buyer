@@ -16,8 +16,7 @@ export const calcSender = (form) => {
   const data = new FormData(formElem);
   data.append("finalCost", finalCost);
   const btn = document.querySelector('.submit');
-  const btnVal = btn.value;
-  console.log('datacalc', data);
+  const btnVal = btn.value;  
 
   function validForm(element) {
     element.classList.add("animate");

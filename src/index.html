@@ -152,7 +152,7 @@
                                 <input type="email" class="modal__input form__input" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                             </label>
                             <label for="" class="modal__label form__label"> Введите ваш номер телефона в <br> международном формате:
-                                <input type="text" class="modal__input form__input" name="phone" id='id-phone-inter'>
+                                <input type="text" class="modal__input form__input" name="phone" id='id-phone' onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
                             </label>
                             <label for="checkbox" class='modal__checkbox'>                                
                                 <input type="checkbox" id="checkbox" name="whatsApp">  
@@ -277,7 +277,7 @@
                                 <div class="calc__col">
                                     <label class="calc__label form__label">5. Введите ваш номер телефона: </label>
     
-                                    <input type="text" class="calc__input form__input" name='phone' id='id-phone'>
+                                    <input type="text" class="calc__input form__input" name='phone' id='id-phone' onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
                                 </div>
                                 <div class="calc__col">
                                     <label class="calc__label form__label"> 6. Ваш аккаунт Instagram:
@@ -478,7 +478,7 @@
                         <form class="price__form form" >
                             <h3 class="form__title">Прайс-лист на доставку грузов</h3>
                             <label for="" class="form__label"> Введите ваш номер телефона:
-                                <input type="text" class="form__input" name="phone" id='id-phone'>
+                                <input type="text" class="form__input" name="phone" id='id-phone' onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
                             </label>
                             <button class="btn form__btn">
                                 перейти в прайс
@@ -609,12 +609,12 @@
                             <p class="price-list__text"><span>От 300 кг</span> – 5$ за кг (одежда, обувь, сумки, ремни)</p>
                             <p class="price-list__text-red"><span>Только обувь:</span> до 20 кг - 7$ за кг, от 20 кг до 300 кг - 5$ за кг, от 300 кг - 4$&nbsp;за&nbsp;кг</p>
                             <p class="price-list__text"><span>Бижутерия:</span> до 15 кг - 15$/кг, от 15 кг - 12 $/кг</p>
+                            <p class="price-list__text"><span>Запчасти:</span> до 50 кг - 5$/кг, от 50 кг - 3 $/кг</p>
                             <div class="price-list__top">
                                 <ul class="price-list__list">
                                     <li class="price-list__cell">Чемоданы и дорожные сумки</li>
                                     <li class="price-list__cell">БАДы</li>
                                     <li class="price-list__cell">Рыболовные снасти</li>
-                                    <li class="price-list__cell">Запчасти</li>
                                 </ul>
                                 <div class="price-list__right">
                                     <span class="price-list__text">до 20 кг – 5 $ за кг</span>

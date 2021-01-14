@@ -116,10 +116,14 @@ display: none;
   &__top,
   &__middle,
   &__bottom {
-    margin-top: 45px;
+    margin-top: 55px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include mobile {
+      margin-top: 30px;
+    }
   }
 
   &__bottom {
