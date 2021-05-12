@@ -56,6 +56,6 @@
     "jquery": "^3.4.1",
     "normalize.css": "^8.0.1",
     "reset-css": "^5.0.1",
-    "swiper": "^5.3.6"
+    "swiper": "^6.5.1"
   }
 }
